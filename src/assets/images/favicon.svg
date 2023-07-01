@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="256" y1="36.5" x2="256" y2="158.1" id="gradient-0">
+      <stop offset="0" style="stop-color: rgb(255, 133, 122);"/>
+      <stop offset="1" style="stop-color: rgb(250, 87, 72);"/>
+    </linearGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="255.951" y1="200.8" x2="255.951" y2="475.507" id="gradient-1">
+      <stop offset="0" style="stop-color: rgb(250, 87, 72);"/>
+      <stop offset="1" style="stop-color: rgb(203, 17, 0);"/>
+    </linearGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="256" y1="16" x2="256" y2="496" id="gradient-2" gradientTransform="matrix(1, 0, 0, 1, 0, 0)">
+      <stop offset="0" style="stop-color: rgb(255, 255, 255);"/>
+      <stop offset="1" style="stop-color: rgb(255, 255, 255);"/>
+    </linearGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="256" y1="16" x2="256" y2="496" id="gradient-3">
+      <stop offset="0" style="stop-color: rgb(250, 250, 250);"/>
+      <stop offset="1" style="stop-color: rgb(225, 225, 225);"/>
+    </linearGradient>
+  </defs>
+  <ellipse style="stroke-width: 0px; stroke: url(#gradient-2); fill: url(#gradient-3);" cx="256" cy="256" rx="240" ry="240"/>
+  <g transform="matrix(0.777707, 0, 0, 0.777707, 55.467644, 36.460453)">
+    <g>
+      <path d="M380.9,51.2c-2.5-8.7-10.5-14.7-19.6-14.7H150.7c-9.1,0-17,6-19.6,14.7L99.8,158.1h312.4L380.9,51.2z" style="fill: url(#gradient-0);"/>
+      <path d="M 491.6 252.6 L 416.4 204.1 C 413.1 202 409.3 200.8 405.3 200.8 L 103.6 200.8 C 99.5 200.8 95.6 202 92.2 204.3 L 20 252.8 C 14.3 256.6 11 262.9 11 269.8 L 11 390.9 C 11 402.2 20.1 411.3 31.4 411.3 L 59.516 411.3 L 60.665 463.72 C 60.665 475.02 93.9 475.5 105.2 475.5 C 116.5 475.5 143.414 471.572 143.414 460.272 L 146.862 411.3 L 361.016 409.576 L 365.613 464.868 C 365.613 476.168 395.4 475.5 406.7 475.5 C 418 475.5 447.212 475.594 447.212 464.294 L 450.085 411.3 L 480.5 411.3 C 491.8 411.3 500.9 402.2 500.9 390.9 L 500.9 269.8 C 501 262.8 497.5 256.3 491.6 252.6 Z M 111.922 348.824 C 100.622 348.824 40.854 340.198 40.854 328.898 C 40.854 317.598 102.921 262.428 114.221 262.428 C 125.521 262.428 188.162 312.427 188.162 323.727 C 188.162 335.027 123.322 348.824 111.922 348.824 Z M 404.1 347.1 C 392.8 347.1 333.032 337.9 333.032 326.6 C 333.032 315.3 392.8 258.406 404.1 258.406 C 415.4 258.406 473.443 314.726 473.443 326.026 C 473.443 337.426 415.4 347.1 404.1 347.1 Z" style="fill: url(#gradient-1);"/>
+    </g>
+  </g>
+</svg>
