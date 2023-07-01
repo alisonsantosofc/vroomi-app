@@ -1,14 +1,18 @@
-import { Briefcase, Flask, House, Image, PaperPlaneTilt, SquaresFour, User, X } from "phosphor-react";
-import { HeaderContainer } from "./styles";
 import { useState } from "react";
+import Link from "next/link";
+import { Briefcase, Flask, House, Image, PaperPlaneTilt, SquaresFour, User, X } from "phosphor-react";
+
 import { ToggleDarkMode } from "../ToggleDarkMode";
 import { useDarkMode } from "../../hooks/useDarkMode";
+
+import { HeaderContainer } from "./styles";
+import { Button } from "../Button";
 
 export function Header() {
   const {darkMode, handleSetDarkMode} = useDarkMode();
   
   const [isOpenMenu, setIsOpenMenu] = useState(false);
-  const [activeSection, setActiveSection] = useState("#home");
+  const [activeSection, setActiveSection] = useState("home");
 
   if (typeof window !== "undefined") {
     /*=== Change background header ===*/
@@ -27,9 +31,9 @@ export function Header() {
     <HeaderContainer className="header">
       <nav className="container">
         <div className="nav-logo">
-          <a href="#" className="logo-link" onClick={() => setActiveSection("#home")}>
-            Alison Santos
-          </a>
+          <Link href="/" className="logo-link" onClick={() => setActiveSection("home")}>
+            Vroomi
+          </Link>
           <ToggleDarkMode 
             darkMode={darkMode} 
             onHandleDarkMode={() => handleSetDarkMode()}
@@ -41,58 +45,51 @@ export function Header() {
         <div className={`nav-menu ${isOpenMenu ? 'show' : ''}`}>
           <ul className="grid">
             <li>
-              <a 
+              <Link 
                 href="#home" 
                 className={`nav-link ${activeSection === '#home' ? 'active' : ''}`} 
                 onClick={() => setActiveSection("#home")}
               >
                 <House /> Início
-              </a>
+              </Link>
             </li>
             <li>
-              <a 
+              <Link 
                 href="#about" 
                 className={`nav-link ${activeSection === '#about' ? 'active' : ''}`} 
                 onClick={() => setActiveSection("#about")}
               >
                 <User /> Sobre
-              </a>
+              </Link>
             </li>
             <li>
-              <a 
-                href="#skills"
-                className={`nav-link ${activeSection === '#skills' ? 'active' : ''}`} 
-                onClick={() => setActiveSection("#skills")}
-              >
-                <Flask /> Habilidades
-              </a>
-            </li>
-            <li>
-              <a 
+              <Link 
                 href="#services"
                 className={`nav-link ${activeSection === '#services' ? 'active' : ''}`} 
                 onClick={() => setActiveSection("#services")}
               >
                 <Briefcase /> Serviços
-              </a>
+              </Link>
             </li>
             <li>
-              <a 
-                href="#projects" 
-                className={`nav-link ${activeSection === '#projects' ? 'active' : ''}`} 
-                onClick={() => setActiveSection("#projects")}
-              >
-                <Image /> Projetos
-              </a>
-            </li>
-            <li>
-              <a 
+              <Link 
                 href="#contact"
                 className={`nav-link ${activeSection === '#contact' ? 'active' : ''}`} 
                 onClick={() => setActiveSection("#contact")}
               >
-                <PaperPlaneTilt /> Contato
-              </a>
+                <PaperPlaneTilt /> Ajuda
+              </Link>
+            </li>
+
+            <li className="nav-button">
+              <Button size="small">
+                <Link 
+                  href="/dashboard"
+                  onClick={() => setActiveSection("#home")}
+                >
+                  Entrar na plataforma
+                </Link>
+              </Button>
             </li>
           </ul>
 

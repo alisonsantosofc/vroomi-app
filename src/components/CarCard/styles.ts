@@ -7,7 +7,8 @@ export const Container = styled.li`
   align-items: center;
   padding: 1rem;
   border-radius: 0.25rem;
-  background: var(--gray-700);
+  background: ${({theme}) => theme.colors.containerBg};
+  box-shadow: ${({theme}) => theme.effects.shadowAround};
 
   .info-container {
     margin: 1rem 0;
@@ -22,7 +23,7 @@ export const Container = styled.li`
     }
   }
 
-  .rent-container {
+  .brand-container {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -35,10 +36,19 @@ export const Container = styled.li`
       strong {
         font-size: 1.8rem;
       }
-    }
+    }    
+  }
+
+  .btn-container {
+    margin: 1rem;
+    width: 100%;
+    display: flex;
 
     button {
-      background: var(--red-500);
+      justify-content: center;
+      width: 100%;
+      padding: 0.8rem 1rem;
+      background: ${({theme}) => theme.colors.main500};
     }
   }
 `;

@@ -23,9 +23,10 @@ export const HeaderContainer = styled.header`
       display: flex;
 
       a {
-        font-size: 1.2rem;
-        font-weight: 1.1rem;
+        font-size: 1.5rem;
+        font-weight: 700;
         margin-right: 0.5rem;
+        letter-spacing: 1px;
       }
     }
 
@@ -34,9 +35,16 @@ export const HeaderContainer = styled.header`
         display: flex;
         column-gap: 2rem;
 
+        li {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+
         .nav-link {
           display: flex;
           flex-direction: column;
+          justify-content: center;
           align-items: center;
           font-size: 0.9rem;
           color: ${({theme}) => theme.colors.text};
@@ -53,6 +61,17 @@ export const HeaderContainer = styled.header`
 
           svg {
             font-size: 1.5rem;
+          }
+        }
+
+        .nav-button {
+          button {
+            background: ${({theme}) => theme.colors.main500};
+            color: ${({theme}) => theme.colors.textContrast};
+
+            &:hover {
+              background: ${({theme}) => theme.effects.hoverLight(theme.colors.main500)};
+            }
           }
         }
       }

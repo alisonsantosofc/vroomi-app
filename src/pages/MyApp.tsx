@@ -1,8 +1,8 @@
 import { ReactNode } from 'react';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { AnimatePresence } from 'framer-motion';
 import { ThemeProvider } from 'styled-components';
+import StyledComponentsRegistry from '@/lib/registry';
 
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
@@ -21,21 +21,25 @@ export function MyApp({children}: MyAppProps) {
 
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
-      <GlobalStyles />
-      <ToastContainer
-        autoClose={5000}
-        className="react-toastfy-container"
-        toastClassName="react-toastfy-content"
-        icon={false}
-        closeButton={false}
-        position="top-center"
-      />
+      <StyledComponentsRegistry>
+        <>
+          <GlobalStyles />
+          <ToastContainer
+            autoClose={5000}
+            className="react-toastfy-container"
+            toastClassName="react-toastfy-content"
+            icon={false}
+            closeButton={false}
+            position="top-center"
+          />
 
-      <Header />
-      
-      {children}
+          <Header />
+          
+          {children}
 
-      <Footer />
+        <Footer />
+        </>
+      </StyledComponentsRegistry>
     </ThemeProvider>
   )
 }

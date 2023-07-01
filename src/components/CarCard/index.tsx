@@ -44,12 +44,14 @@ export function CarCard({car, handleRentCar}: CarCardProps) {
         </p>
       </div>
 
-      <div className="rent-container">
+      <div className="brand-container">
         <p>
           <strong>{car.model}</strong>
           <span>{car.brand}</span>
         </p>
+      </div>
 
+      <div className="btn-container">
         <Button onClick={() => handleRentCar(car)}>Alugar</Button>
       </div>
     </Container>
