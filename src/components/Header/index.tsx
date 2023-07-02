@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Link from "next/link";
-import { Briefcase, House, PaperPlaneTilt, SquaresFour, User, X } from "@phosphor-icons/react";
+import { Briefcase, House, PaperPlaneTilt, SignIn, SquaresFour, User, UserPlus, X } from "@phosphor-icons/react";
 
 import { ToggleDarkMode } from "../ToggleDarkMode";
 import { useDarkMode } from "../../hooks/useDarkMode";
@@ -86,7 +86,11 @@ export function Header() {
         </div>
 
         <div className="btn-container">
-          <Button size="small" className="nav-button signin">
+          <Button 
+            size="small" 
+            className="nav-button signin"
+            icon={<SignIn />}
+          >
             <Link 
               href="/signin"
             >
@@ -94,7 +98,11 @@ export function Header() {
             </Link>
           </Button>
 
-          <Button size="small" className="nav-button signup">
+          <Button 
+            size="small" 
+            className="nav-button signup"
+            icon={<UserPlus />}
+          >
             <Link 
               href="/signup"
             >

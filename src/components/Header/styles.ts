@@ -194,6 +194,25 @@ export const HeaderContainer = styled.header`
     }
   }
 
+  @media screen and (max-width: 576px) {
+    .btn-container {
+      display: flex;
+      gap: 0.75rem;
+
+      .nav-button {
+        padding: 0.5rem;
+
+        a {
+          display: none;
+        }
+
+        svg {
+          margin: 0;
+        }
+      }
+    }
+  }
+
   /* For small devices */
   @media screen and (max-width: 350px) {
     nav {
