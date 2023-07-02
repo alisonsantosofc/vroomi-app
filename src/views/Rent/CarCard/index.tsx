@@ -22,6 +22,13 @@ export function CarCard({car, handleRentCar}: CarCardProps) {
         height={150}
       />
 
+      <div className="brand-container">
+        <p>
+          <strong>{car.model}</strong>
+          <span>{car.brand}</span>
+        </p>
+      </div>
+
       <div className="info-container">
         <p>
           Preço por dia:{' '}
@@ -43,13 +50,6 @@ export function CarCard({car, handleRentCar}: CarCardProps) {
               lang: 'pt-br',
             })}
           </span>
-        </p>
-      </div>
-
-      <div className="brand-container">
-        <p>
-          <strong>{car.model}</strong>
-          <span>{car.brand}</span>
         </p>
       </div>
 
