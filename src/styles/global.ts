@@ -98,6 +98,46 @@ export const GlobalStyles = createGlobalStyle`
     gap: 1.5rem;
   }
 
+  .react-modal-overlay {
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.5);
+  }
+
+  .react-modal-content {
+    background: ${props => props.theme.colors.containerBg};
+    padding: 2rem;
+    position: relative;
+    border-radius: 4px;
+
+    > svg {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 0.5rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    @media (max-width: 998px) {
+      width: 100%;
+      margin: 1.5rem;
+    }
+  }
+
   /*=== Breakpoints ===*/
   /* For large devices */
   @media screen and (max-width: 992px) {

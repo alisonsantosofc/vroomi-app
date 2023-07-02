@@ -9,6 +9,7 @@ import { RentCarModal } from './RentCarModal';
 import { CarCard } from './CarCard';
 
 import { StyledRent } from './styles';
+import { Button } from '@/components/Button';
 
 export interface Car {
   id: string;
@@ -16,8 +17,10 @@ export interface Car {
   model: string;
   pricePerDay: number;
   pricePerKm: number;
-  maxDuration: number;
-  maxDistance: number;
+  availability: {
+    maxDuration: number;
+    maxDistance: number;
+  }
 }
 
 interface RequestState {
@@ -81,34 +84,29 @@ export function Rent() {
 
   return (
     <StyledRent className="rent-container container" >
-      <div>
+      <div className="rent-find">
         <h2>Encontre um carro para alugar</h2>
 
-        <form>
-          {/* <label htmlFor="maxDuration">
-            dias{' '}
-            <Input
-              id="maxDuration"
+        <div className="form-content">
+          <form>
+            <Input 
+              label="dias de permanência"
               type="number"
               onKeyDown={(e) => handlePressKey(e)}
               onChange={(e) => setMaxDuration(Number(e.target.value))}
             />
-          </label> */}
 
-          <Input label="dias" />
-
-          <label htmlFor="maxDistance">
-            distância (km){' '}
             <Input
-              id="maxDistance"
+              label="distância (km)"
               type="number"
               onKeyDown={(e) => handlePressKey(e)}
               onChange={(e) => setMaxDistance(Number(e.target.value))}
             />
-          </label>
+          </form>
 
+          <Button>Encontrar um carro</Button>
           <MagnifyingGlass weight="bold" onClick={() => handleFindAvailableCars()} />
-        </form>
+        </div>
       </div>
 
       {monitoringRequest.request === 'success' || monitoringRequest.request === 'failed' ? (
@@ -126,7 +124,7 @@ export function Rent() {
         ''
       )}
 
-      <div className="cars-list-container">
+      <div className="cars-list">
         <ul>
           {cars.map((car) => (
             <CarCard car={car} handleRentCar={handleRentCar} key={car.id} />

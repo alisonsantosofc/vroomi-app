@@ -21,18 +21,19 @@ export function About() {
 
   return (
     <StyledAbout className="section" id="about">
-      <h2 className="section-title">Descubra nossa paixão</h2>
-      <span className="section-subtitle">Nosso propósito é fornecer a melhor experiência</span>
+      <h2 className="section-title">Quem somos</h2>
+      <span className="section-subtitle">Fornecendo a melhor experiência</span>
 
       <div className="about-container container">
         <div className="about-info">
           <AboutInfo />
 
           <p>
-            Com o Vroomi, você tem acesso a um aplicativo web inovador que torna
-            o aluguel de carros uma experiência descomplicada e conveniente. Nossa 
-            plataforma oferece uma ampla seleção de veículos modernos e bem cuidados, 
-            disponíveis para aluguel a preços competitivos.
+            Somos uma empresa dedicada a superar suas expectativas e tornar seu 
+            aluguel de carro uma experiência memorável. Com o Vroomi, você tem acesso 
+            a um aplicativo web inovador que torna o aluguel de carros uma experiência 
+            descomplicada e conveniente. Nossa plataforma oferece uma ampla seleção de 
+            veículos modernos e bem cuidados, disponíveis para aluguel a preços competitivos.
           </p>
         </div>
 

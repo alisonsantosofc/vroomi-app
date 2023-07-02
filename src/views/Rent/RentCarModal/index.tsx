@@ -7,7 +7,7 @@ import { Car } from '@/views/Rent';
 
 import { formatAmount } from '@/utils/format';
 
-import { Container } from './styles';
+import { StyledRentCarModal } from './styles';
 
 interface RentCarModalProps {
   isOpen: boolean;
@@ -31,8 +31,8 @@ export function RentCarModal({ car, isOpen, onRequestClose }: RentCarModalProps)
       overlayClassName="react-modal-overlay"
       className="react-modal-content"
     >
-      <Container>
-        <X weight="bold" onClick={() => onRequestClose()} />
+      <StyledRentCarModal>
+        <X className="btn-close" weight="bold" onClick={() => onRequestClose()} />
 
         {car.id && (
           <Image
@@ -49,42 +49,46 @@ export function RentCarModal({ car, isOpen, onRequestClose }: RentCarModalProps)
         </div>
 
         <div className="info-container">
-          <p>
-            Preço por dia:{' '}
-            <span>
-              {formatAmount({
-                amount: car.pricePerDay,
-                currency: 'BRL',
-                lang: 'pt-br',
-              })}
-            </span>
-          </p>
+          <div className="price-content">
+            <p>
+              Preço por dia:{' '}
+              <span>
+                {formatAmount({
+                  amount: car.pricePerDay,
+                  currency: 'BRL',
+                  lang: 'pt-br',
+                })}
+              </span>
+            </p>
 
-          <p>
-            Preço por km:{' '}
-            <span>
-              {formatAmount({
-                amount: car.pricePerKm,
-                currency: 'BRL',
-                lang: 'pt-br',
-              })}
-            </span>
-          </p>
+            <p>
+              Preço por km:{' '}
+              <span>
+                {formatAmount({
+                  amount: car.pricePerKm,
+                  currency: 'BRL',
+                  lang: 'pt-br',
+                })}
+              </span>
+            </p>
+          </div>
 
-          <p>
-            Limite por dia:{' '}
-            <span>
-              {car.maxDuration} {car.maxDuration > 1 ? 'dias' : 'dia'}
-            </span>
-          </p>
+          <div className="limit-content">
+            <p>
+              Limite por dia:{' '}
+              <span>
+                {car.availability.maxDuration} {car.availability.maxDuration > 1 ? 'dias' : 'dia'}
+              </span>
+            </p>
 
-          <p>
-            Limite por km: <span>{car.maxDistance} Km</span>
-          </p>
+            <p>
+              Limite por km: <span>{car.availability.maxDistance} Km</span>
+            </p>
+          </div>
         </div>
 
         <Button size="large">Alugar agora</Button>
-      </Container>
+      </StyledRentCarModal>
     </ReactModal>
   );
 }

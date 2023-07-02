@@ -9,10 +9,9 @@ export const InputContainer = styled.div<InputContainerProps>`
   position: relative;
   display: flex;
   align-items: center;
-  padding: 0 1rem;
-  height: 3rem;
+  padding: 0.8rem 1.5rem;
   border: 2px solid transparent;
-  border-radius: 0.75rem;
+  border-radius: 0.25rem;
   background: ${props => props.theme.colors.containerBg};
   transition: border-color color ease-in .3s;
   box-shadow: ${props => props.theme.effects.shadowAround};
@@ -43,6 +42,13 @@ export const InputContainer = styled.div<InputContainerProps>`
     &:focus-visible {
       outline: none;
     }
+  }
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
   }
 
   svg {

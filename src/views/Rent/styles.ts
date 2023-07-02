@@ -8,7 +8,7 @@ export const StyledRent = styled.main`
   align-items: center;
   margin-bottom: 2rem;
 
-  > div {
+  .rent-find {
     margin-top: 1rem;
     width: 100%;
     display: flex;
@@ -18,61 +18,42 @@ export const StyledRent = styled.main`
       font-size: 2rem;
     }
 
-    > form {
+    .form-content {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+
+      button {
+        display: none;
+        background: ${({theme}) => theme.colors.main500};
+        justify-content: center;
+
+        &:hover {
+          background: ${({theme}) => theme.effects.hoverLight(theme.colors.main500)};
+        }
+      }
+    }
+
+    form {
       margin-top: 1rem;
       display: flex;
       align-items: center;
-      position: relative;
-
-      label {
-        font-size: 1.1rem;
-        font-style: italic;
-        display: flex;
-        flex-direction: column;
-
-        & + label {
-          margin-left: 2rem;
-        }
-
-        &:nth-child(1) {
-          width: 70px;
-        }
-
-        &:nth-child(2) {
-          max-width: 140px;
-        }
-
-        input {
-          margin-top: 0.5rem;
-        }
-      }
-
-      svg {
-        padding: 0.5rem;
-        font-size: 3rem;
-        margin-top: 1.5rem;
-        margin-left: 2rem;
-        border-radius: 100%;
-        cursor: pointer;
-        transition: all ease-in 0.2s;
-        background: var(--main-color);
-
-        &:hover {
-          background: var(--gray-700);
-          box-shadow: 0px -1px 10px 3px rgba(0, 0, 0, 0.28);
-        }
-      }
+      gap: 1rem;
     }
 
-    @media (max-width: 778px) {
-      h2 {
-        font-size: 1.5rem;
-      }
-    }
+    svg {
+      padding: 0.5rem;
+      font-size: 2rem;
+      margin-top: 1.5rem;
+      border-radius: 100%;
+      cursor: pointer;
+      transition: all ease-in 0.2s;
+      background: ${({theme}) => theme.colors.main500};
+      color: ${({theme}) => theme.colors.buttonText};
+      box-shadow: ${({theme}) => theme.effects.shadowAround};
 
-    @media (max-width: 496px) {
-      h2 {
-        font-size: 1.2rem;
+      &:hover {
+        background: ${({theme}) => theme.effects.hoverLight(theme.colors.main500)};
       }
     }
   }
@@ -109,7 +90,7 @@ export const StyledRent = styled.main`
     }
   }
 
-  .cars-list-container {
+  .cars-list{
     width: 100%;
 
     ul {
@@ -118,32 +99,6 @@ export const StyledRent = styled.main`
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap: 1rem;
-
-      @media (max-width: 1144px) {
-        width: calc(100vw - 5rem);
-        grid-template-columns: 1fr 1fr;
-      }
-
-      @media (max-width: 778px) {
-        width: calc(100vw - 3rem);
-        grid-template-columns: 1fr;
-
-        li {
-          img {
-            width: 400px;
-            height: 200px;
-          }
-        }
-      }
-
-      @media (max-width: 496px) {
-        li {
-          img {
-            width: 300px;
-            height: 150px;
-          }
-        }
-      }
     }
   }
 
@@ -152,11 +107,51 @@ export const StyledRent = styled.main`
     min-height: 60vh;
   }
 
-  @media (max-width: 1144px) {
-    padding: 60px 2rem 0 2rem;
+  // Breakpoints
+  /* For medium devices */
+  @media screen and (max-width: 998px) {
+    .cars-list{
+      ul {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .rent-find {
+      .form-content {
+        flex-direction: column;
+
+        button {
+          width: 100%;
+          display: flex;
+        }
+      }
+
+      form {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+
+        input {
+          font-size: 0.9rem;
+        }
+      }
+
+      svg {
+        display: none;
+      }
+    }
+
+    .cars-list{
+      ul {
+        grid-template-columns: 1fr;
+      }
+    }
   }
 
-  @media (max-width: 778px) {
-    padding: 60px 1rem 0 1rem;
+  @media screen and (max-width: 576px) {
+
   }
 `;

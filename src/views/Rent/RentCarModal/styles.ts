@@ -1,20 +1,18 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  max-width: 100%;
+export const StyledRentCarModal = styled.div`
+  width: 576px;
   position: relative;
-  background: var(--gray-700);
-  padding: 2rem;
 
   img {
-    max-width: 100%;
-    max-heigth: 100%;
+    width: 100%;
+    height: auto;
   }
 
-  > svg {
+  .btn-close {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: -1rem;
+    right: -1rem;
     font-size: 1.5rem;
     cursor: pointer;
   }
@@ -26,8 +24,8 @@ export const Container = styled.div`
     margin-top: 1rem;
 
     h2 {
-      z-index: 2;
-      font-size: 3rem;
+      font-size: 3.5rem;
+      font-weight: 600;
     }
 
     span {
@@ -50,10 +48,56 @@ export const Container = styled.div`
         font-weight: 600;
       }
     }
+
+    .limit-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
   }
 
   button {
     margin-top: 2rem;
-    background: var(--main-color);
+    background: ${({theme}) => theme.colors.main500};
+    justify-content: center;
+  }
+
+  // Breakpoints
+  @media (max-width: 998px) {
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .info-container {
+      p {
+        font-size: 1rem;
+        line-height: 1.4rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    .info-container {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+      
+
+      .price-content {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+      }
+
+      .limit-content {
+        display: grid;
+        gap: 0.5rem;
+        grid-template-columns: 1fr;
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 1.4rem;
+      }
+    }
   }
 `;

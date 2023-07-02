@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Link from "next/link";
-import { Briefcase, Flask, House, Image, PaperPlaneTilt, SquaresFour, User, X } from "@phosphor-icons/react";
+import { Briefcase, House, PaperPlaneTilt, SquaresFour, User, X } from "@phosphor-icons/react";
 
 import { ToggleDarkMode } from "../ToggleDarkMode";
 import { useDarkMode } from "../../hooks/useDarkMode";
@@ -46,36 +46,36 @@ export function Header() {
           <ul className="grid">
             <li>
               <Link 
-                href="#home" 
-                className={`nav-link ${activeSection === '#home' ? 'active' : ''}`} 
-                onClick={() => setActiveSection("#home")}
+                href="/#home" 
+                className={`nav-link ${activeSection === 'home' ? 'active' : ''}`} 
+                onClick={() => setActiveSection("home")}
               >
                 <House /> Início
               </Link>
             </li>
             <li>
               <Link 
-                href="#about" 
-                className={`nav-link ${activeSection === '#about' ? 'active' : ''}`} 
-                onClick={() => setActiveSection("#about")}
+                href="/#about" 
+                className={`nav-link ${activeSection === 'about' ? 'active' : ''}`} 
+                onClick={() => setActiveSection("about")}
               >
                 <User /> Sobre
               </Link>
             </li>
             <li>
               <Link 
-                href="#services"
-                className={`nav-link ${activeSection === '#services' ? 'active' : ''}`} 
-                onClick={() => setActiveSection("#services")}
+                href="/#services"
+                className={`nav-link ${activeSection === 'services' ? 'active' : ''}`} 
+                onClick={() => setActiveSection("services")}
               >
                 <Briefcase /> Serviços
               </Link>
             </li>
             <li>
               <Link 
-                href="#contact"
-                className={`nav-link ${activeSection === '#contact' ? 'active' : ''}`} 
-                onClick={() => setActiveSection("#contact")}
+                href="/#support"
+                className={`nav-link ${activeSection === 'support' ? 'active' : ''}`} 
+                onClick={() => setActiveSection("support")}
               >
                 <PaperPlaneTilt /> Ajuda
               </Link>
