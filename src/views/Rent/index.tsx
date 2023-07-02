@@ -12,7 +12,7 @@ import { StyledRent } from './styles';
 import { Button } from '@/components/Button';
 
 export interface Car {
-  id: string;
+  id?: string;
   brand: string;
   model: string;
   pricePerDay: number;
@@ -51,8 +51,6 @@ export function Rent() {
 
       const response = await (await fetch(`${apiUrl}/cars?` + params)).json();
 
-      console.log(response);
-      
       setCars(response.cars);
 
       setMonitoringRequest({ request: 'success' });

@@ -30,6 +30,7 @@ export function RentCarModal({ car, isOpen, onRequestClose }: RentCarModalProps)
       onRequestClose={handleCloseModal}
       overlayClassName="react-modal-overlay"
       className="react-modal-content"
+      ariaHideApp={false}
     >
       <StyledRentCarModal>
         <X className="btn-close" weight="bold" onClick={() => onRequestClose()} />
@@ -77,12 +78,12 @@ export function RentCarModal({ car, isOpen, onRequestClose }: RentCarModalProps)
             <p>
               Limite por dia:{' '}
               <span>
-                {car.availability.maxDuration} {car.availability.maxDuration > 1 ? 'dias' : 'dia'}
+                {car?.availability?.maxDuration} {car?.availability?.maxDuration > 1 ? 'dias' : 'dia'}
               </span>
             </p>
 
             <p>
-              Limite por km: <span>{car.availability.maxDistance} Km</span>
+              Limite por km: <span>{car?.availability?.maxDistance} Km</span>
             </p>
           </div>
         </div>

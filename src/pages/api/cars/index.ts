@@ -2,20 +2,10 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 import importedCars from "./cars.json";
-
-interface Car {
-  brand: string,
-  model: string,
-  pricePerDay: number,
-  pricePerKm: number,
-  availability: { 
-    maxDuration: number, 
-    maxDistance: number 
-  }
-}
+import { Car } from '@/views/Rent';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  function addId(cars: Car[]) {
+  function addId(cars: Omit<Car, "id">[]) {
     return cars.map((car, i) => {
       return { id: i + 1, ...car };
     });
