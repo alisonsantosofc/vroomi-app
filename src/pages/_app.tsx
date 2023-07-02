@@ -1,6 +1,6 @@
 import type { AppProps } from 'next/app';
 
-import { MyApp } from './MyApp';
+import { MyApp } from '../MyApp';
 
 import { DarkModeProvider } from '../hooks/useDarkMode';
 import { SessionUserProvider } from '../hooks/useSessionUser';

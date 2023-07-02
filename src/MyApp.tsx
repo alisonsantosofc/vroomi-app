@@ -4,13 +4,13 @@ import 'react-toastify/dist/ReactToastify.css';
 import { ThemeProvider } from 'styled-components';
 import StyledComponentsRegistry from '@/lib/registry';
 
-import { Header } from '../components/Header';
-import { Footer } from '../components/Footer';
+import { Header } from './components/Header';
+import { Footer } from './components/Footer';
 
-import { useDarkMode } from '../hooks/useDarkMode';
+import { useDarkMode } from './hooks/useDarkMode';
 
-import { GlobalStyles } from '../styles/global';
-import { darkTheme, lightTheme } from "../styles/themes";
+import { GlobalStyles } from './styles/global';
+import { darkTheme, lightTheme } from "./styles/themes";
 
 interface MyAppProps {
   children: ReactNode;
