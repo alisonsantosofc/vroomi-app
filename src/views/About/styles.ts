@@ -52,7 +52,7 @@ export const StyledAbout = styled.section`
       }
 
       &.after-animate {
-        left: 55%;
+        left: 60%;
       }
 
       @keyframes wheel_animate {
@@ -61,7 +61,7 @@ export const StyledAbout = styled.section`
         }
 
         100% {
-          left: 55%;
+          left: 60%;
         }
       }
     }
@@ -75,12 +75,17 @@ export const StyledAbout = styled.section`
       left: 0;
 
       .img-container {
+        width: 100%;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        
         &.active-animate {
           animation: none;
         }
 
         &.after-animate {
-          left: 25%;
+          left: 0;
         }
       }
     }
@@ -107,11 +112,7 @@ export const StyledAbout = styled.section`
 
     .about-container {
       .img-container {
-        bottom: -12rem;
-
-        img {
-          width: 100%;
-        }
+        bottom: -14rem;
       }
     }
   }
