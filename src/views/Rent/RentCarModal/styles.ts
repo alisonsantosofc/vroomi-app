@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledRentCarModal = styled.div`
-  width: 576px;
+  width: 676px;
   position: relative;
 
   img {
@@ -24,12 +24,11 @@ export const StyledRentCarModal = styled.div`
     margin-top: 1rem;
 
     h2 {
-      font-size: 3.5rem;
+      font-size: 3rem;
       font-weight: 600;
     }
 
     span {
-      z-index: 2;
       font-size: 1.5rem;
     }
   }
@@ -69,15 +68,6 @@ export const StyledRentCarModal = styled.div`
 
   @media (max-width: 768px) {
     .info-container {
-      p {
-        font-size: 1rem;
-        line-height: 1.4rem;
-      }
-    }
-  }
-
-  @media screen and (max-width: 576px) {
-    .info-container {
       grid-template-columns: 1fr;
       gap: 0.5rem;
       
@@ -97,6 +87,18 @@ export const StyledRentCarModal = styled.div`
       p {
         font-size: 1rem;
         line-height: 1.4rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    .brand-container {
+      h2 {
+        font-size: 2rem;
+      }
+
+      span {
+        font-size: 1.2rem;
       }
     }
   }

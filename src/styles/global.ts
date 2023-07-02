@@ -161,7 +161,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   /* For small devices */
-  @media screen and (max-width: 350px) {
+  @media screen and (max-width: 380px) {
     .container {
       margin-left: 1rem;
       margin-right: 1rem;

@@ -63,7 +63,7 @@ export function RentCarModal({ car, isOpen, onRequestClose }: RentCarModalProps)
             </p>
 
             <p>
-              Preço por km:{' '}
+              {'Preço por km: '}
               <span>
                 {formatAmount({
                   amount: car.pricePerKm,
@@ -76,14 +76,17 @@ export function RentCarModal({ car, isOpen, onRequestClose }: RentCarModalProps)
 
           <div className="limit-content">
             <p>
-              Limite por dia:{' '}
+              {'Limite de permanência: '}
               <span>
-                {car?.availability?.maxDuration} {car?.availability?.maxDuration > 1 ? 'dias' : 'dia'}
+                {`${car?.availability?.maxDuration} ${car?.availability?.maxDuration > 1 ? 'dias' : 'dia'}`}
               </span>
             </p>
 
             <p>
-              Limite por km: <span>{car?.availability?.maxDistance} Km</span>
+              {'Limite de km rodados: '}
+              <span>
+                {`${car?.availability?.maxDistance} Km`}
+              </span>
             </p>
           </div>
         </div>

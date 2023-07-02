@@ -75,18 +75,9 @@ export const StyledRent = styled.main`
     }
 
     span {
-      color: var(--main-color);
+      color: ${({theme}) => theme.colors.main500};
       font-size: 1.8rem;
       font-weight: 700;
-    }
-
-    @media (max-width: 496px) {
-      font-size: 1rem;
-
-      span {
-      font-size: 1.5rem;
-
-    }
     }
   }
 
@@ -102,13 +93,8 @@ export const StyledRent = styled.main`
     }
   }
 
-  .loader-content {
-    width: 100%;
-    min-height: 60vh;
-  }
-
   // Breakpoints
-  /* For medium devices */
+  /* For large devices */
   @media screen and (max-width: 998px) {
     .cars-list{
       ul {
@@ -116,11 +102,14 @@ export const StyledRent = styled.main`
       }
     }
   }
-  
+  /* For medium devices */
   @media screen and (max-width: 768px) {
+    padding-top: 1rem;
+
     .rent-find {
       .form-content {
         flex-direction: column;
+        gap: 1rem;
 
         button {
           width: 100%;
@@ -131,7 +120,7 @@ export const StyledRent = styled.main`
       form {
         width: 100%;
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
         gap: 0.5rem;
 
         input {
@@ -150,8 +139,17 @@ export const StyledRent = styled.main`
       }
     }
   }
-
   @media screen and (max-width: 576px) {
+  }
+  /* For small devices */
+  @media screen and (max-width: 380px) {
+    .rent-find {
+      .form-content {
+      }
 
+      form {
+        grid-template-columns: 1fr;
+      }
+    }
   }
 `;

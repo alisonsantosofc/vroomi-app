@@ -4,7 +4,16 @@ export const Container = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* width: 100%; */
-  height: 34px;
-  margin-top: -1rem;
+
+  p {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  /* For medium devices */
+  @media screen and (max-width: 768px) {
+    p {
+      font-size: 0.8rem;
+    }
+  }
 `;

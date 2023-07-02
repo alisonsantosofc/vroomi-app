@@ -56,8 +56,6 @@ export function Rent() {
       setMonitoringRequest({ request: 'success' });
     } catch (err) {
       setMonitoringRequest({ request: 'failed' });
-
-      console.log(err);
       
       toast.error(
         <Toast
@@ -88,7 +86,7 @@ export function Rent() {
         <div className="form-content">
           <form>
             <Input 
-              label="dias de permanência"
+              label="dias (permanência)"
               type="number"
               onKeyDown={(e) => handlePressKey(e)}
               onChange={(e) => setMaxDuration(Number(e.target.value))}
@@ -102,7 +100,7 @@ export function Rent() {
             />
           </form>
 
-          <Button>Encontrar um carro</Button>
+          <Button onClick={() => handleFindAvailableCars()}>Encontrar um carro</Button>
           <MagnifyingGlass weight="bold" onClick={() => handleFindAvailableCars()} />
         </div>
       </div>

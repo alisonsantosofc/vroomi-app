@@ -2,10 +2,8 @@ import { Container } from './styles';
 
 export function Footer() {
   return (
-    <Container>
-      <div>
-        <p>2022 &copy; Todos os direitos reservados | Developed by Alison Santos</p>
-      </div>
+    <Container className="container">
+      <p>Copyright © {new Date().getFullYear()} Vroomi. Todos os direitos reservados.</p>
     </Container>
   );
 }
