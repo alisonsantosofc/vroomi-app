@@ -80,20 +80,27 @@ export function Header() {
                 <PaperPlaneTilt /> Ajuda
               </Link>
             </li>
-
-            <li className="nav-button">
-              <Button size="small">
-                <Link 
-                  href="/dashboard"
-                  onClick={() => setActiveSection("#home")}
-                >
-                  Entrar na plataforma
-                </Link>
-              </Button>
-            </li>
           </ul>
 
           <X className="nav-close" onClick={() => setIsOpenMenu(!isOpenMenu)} />
+        </div>
+
+        <div className="btn-container">
+          <Button size="small" className="nav-button signin">
+            <Link 
+              href="/signin"
+            >
+              Conecte-se
+            </Link>
+          </Button>
+
+          <Button size="small" className="nav-button signup">
+            <Link 
+              href="/signup"
+            >
+              Inscreva-se
+            </Link>
+          </Button>
         </div>
 
         <div className="nav-toggle" onClick={() => setIsOpenMenu(!isOpenMenu)}>

@@ -34,6 +34,7 @@ export const HeaderContainer = styled.header`
       ul {
         display: flex;
         column-gap: 2rem;
+        height: 2rem;
 
         li {
           display: flex;
@@ -50,29 +51,44 @@ export const HeaderContainer = styled.header`
           color: ${({theme}) => theme.colors.text};
           font-weight: 500;
           transition: .3s; 
-
+          height: 100%;
+          
           &:hover {
             color: ${({theme}) => theme.effects.hoverLight(theme.colors.title)};
           }
 
           &.active {
-            color: ${({theme}) => theme.colors.main500};
+            color: ${({theme}) => theme.colors.title};
           }
 
           svg {
             font-size: 1.5rem;
           }
         }
+      }
+    }
+  }
 
-        .nav-button {
-          button {
-            background: ${({theme}) => theme.colors.main500};
-            color: ${({theme}) => theme.colors.textContrast};
+  .btn-container {
+    display: flex;
+    gap: 0.75rem;
 
-            &:hover {
-              background: ${({theme}) => theme.effects.hoverLight(theme.colors.main500)};
-            }
-          }
+    .nav-button {
+      &.signin {
+        color: ${({theme}) => theme.colors.textContrast};
+        background: ${({theme}) => theme.colors.main500};
+        
+        &:hover {
+          background: ${({theme}) => theme.effects.hoverLight(theme.colors.main500)};
+        }
+      }
+
+      &.signup {
+        color: ${({theme}) => theme.colors.textContrast};
+        background: ${({theme}) => theme.colors.title};
+        
+        &:hover {
+          background: ${({theme}) => theme.effects.hoverLight(theme.colors.title)};
         }
       }
     }
