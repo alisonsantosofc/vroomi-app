@@ -1,10 +1,11 @@
 import Image from 'next/image';
-import { X } from 'phosphor-react';
 import ReactModal from 'react-modal';
-import { formatAmount } from '../../utils/format';
-import { Car } from '../../views/Rent';
+import { X } from "@phosphor-icons/react";
 
-import { Button } from '../Button';
+import { Button } from '@/components/Button';
+import { Car } from '@/views/Rent';
+
+import { formatAmount } from '@/utils/format';
 
 import { Container } from './styles';
 
@@ -35,7 +36,7 @@ export function RentCarModal({ car, isOpen, onRequestClose }: RentCarModalProps)
 
         {car.id && (
           <Image
-            src={require(`../../../public/cars/${car.id}.png`)}
+            src={require(`../../../../public/cars/${car.id}.png`)}
             alt={car.model}
             width={600}
             height={300}

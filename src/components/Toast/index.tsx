@@ -1,4 +1,4 @@
-import { Smiley, SmileyWink, SmileyNervous, SmileySad } from 'phosphor-react';
+import { Smiley, SmileyWink, SmileyNervous, SmileySad } from '@phosphor-icons/react';
 
 import { Container } from './styles';
 

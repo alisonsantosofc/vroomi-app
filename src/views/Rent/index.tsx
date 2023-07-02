@@ -1,15 +1,14 @@
-import { KeyboardEvent, useEffect, useState } from 'react';
-import { ArrowArcRight, SmileySad } from 'phosphor-react';
+import { toast } from 'react-toastify';
+import { KeyboardEvent, useState } from 'react';
+import { MagnifyingGlass, SmileySad } from '@phosphor-icons/react';
 
 import { Input } from '../../components/Input';
-
-import { Container } from './styles';
-
-import { RentCarModal } from '../../components/RentCarModal';
-import { CarCard } from '../../components/CarCard';
-import { toast } from 'react-toastify';
 import { Toast } from '../../components/Toast';
 import { Loader } from '../../components/Loader';
+import { RentCarModal } from './RentCarModal';
+import { CarCard } from './CarCard';
+
+import { StyledRent } from './styles';
 
 export interface Car {
   id: string;
@@ -30,7 +29,6 @@ export function Rent() {
   const [maxDuration, setMaxDuration] = useState(0);
   const [maxDistance, setMaxDistance] = useState(0);
 
-  const [isResponseMessageActive, setIsResponseMessageActive] = useState(false);
   const [carSeletedToRent, setCarSeletedToRent] = useState<Car>({} as Car);
   const [isOpenModal, setIsOpenModal] = useState(false);
 
@@ -53,7 +51,6 @@ export function Rent() {
       console.log(response);
       
       setCars(response.cars);
-      setIsResponseMessageActive(true);
 
       setMonitoringRequest({ request: 'success' });
     } catch (err) {
@@ -83,12 +80,12 @@ export function Rent() {
   }
 
   return (
-    <Container>
+    <StyledRent className="rent-container container" >
       <div>
         <h2>Encontre um carro para alugar</h2>
 
         <form>
-          <label htmlFor="maxDuration">
+          {/* <label htmlFor="maxDuration">
             dias{' '}
             <Input
               id="maxDuration"
@@ -96,7 +93,9 @@ export function Rent() {
               onKeyDown={(e) => handlePressKey(e)}
               onChange={(e) => setMaxDuration(Number(e.target.value))}
             />
-          </label>
+          </label> */}
+
+          <Input label="dias" />
 
           <label htmlFor="maxDistance">
             distância (km){' '}
@@ -108,7 +107,7 @@ export function Rent() {
             />
           </label>
 
-          <ArrowArcRight weight="bold" onClick={() => handleFindAvailableCars()} />
+          <MagnifyingGlass weight="bold" onClick={() => handleFindAvailableCars()} />
         </form>
       </div>
 
@@ -144,6 +143,6 @@ export function Rent() {
         isOpen={isOpenModal}
         onRequestClose={() => setIsOpenModal(!isOpenModal)}
       />
-    </Container>
+    </StyledRent>
   );
 }

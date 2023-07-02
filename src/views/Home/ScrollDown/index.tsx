@@ -1,7 +1,6 @@
-import { HandTap, MouseSimple, } from "@phosphor-icons/react";
+import { HandTap, MouseSimple, ArrowDown} from "@phosphor-icons/react";
 
 import { StyledScrollDown } from "./styles";
-import { ArrowDown } from "phosphor-react";
 
 export function ScrollDown() {
   return (

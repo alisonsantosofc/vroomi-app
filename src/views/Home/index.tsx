@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
-import { Check } from 'phosphor-react';
+import { Check } from '@phosphor-icons/react';
 
 import { Button } from '../../components/Button';
 import { ScrollDown } from './ScrollDown';

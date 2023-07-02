@@ -1,8 +1,10 @@
 import Image from 'next/image';
-import { formatAmount } from '../../utils/format';
 
-import { Car } from '../../views/Rent';
-import { Button } from '../Button';
+import { Button } from '@/components/Button';
+import { Car } from '@/views/Rent';
+
+import { formatAmount } from '@/utils/format';
+
 import { Container } from './styles';
 
 interface CarCardProps {
@@ -14,7 +16,7 @@ export function CarCard({car, handleRentCar}: CarCardProps) {
   return (
     <Container>
       <Image
-        src={require(`../../../public/cars/${car.id}.png`)}
+        src={require(`../../../../public/cars/${car.id}.png`)}
         alt={car.model}
         width={300}
         height={150}

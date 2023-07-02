@@ -1,16 +1,12 @@
 import styled from 'styled-components';
 
-export const Container = styled.main`
-  width: 1144px;
-  max-width: 100vw;
-  min-height: calc(100vh - 64px);
-  margin: 0 auto;
-  padding-top: 60px;
+export const StyledRent = styled.main`
+  min-height: 100vh;
+  padding-top: 4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 2rem;
-  position: relative;
 
   > div {
     margin-top: 1rem;

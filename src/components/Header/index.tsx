@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Link from "next/link";
-import { Briefcase, Flask, House, Image, PaperPlaneTilt, SquaresFour, User, X } from "phosphor-react";
+import { Briefcase, Flask, House, Image, PaperPlaneTilt, SquaresFour, User, X } from "@phosphor-icons/react";
 
 import { ToggleDarkMode } from "../ToggleDarkMode";
 import { useDarkMode } from "../../hooks/useDarkMode";

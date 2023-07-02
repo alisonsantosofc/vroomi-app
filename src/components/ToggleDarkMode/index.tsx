@@ -1,4 +1,4 @@
-import { Moon, Sun } from "phosphor-react";
+import { Moon, Sun } from "@phosphor-icons/react";
 import { ToggleDarkModeContainer } from "./styles";
 
 interface ToggleDarkModeProps {
