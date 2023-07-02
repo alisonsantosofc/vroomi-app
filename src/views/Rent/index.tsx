@@ -40,6 +40,7 @@ export function Rent() {
     setCars([]);
 
     try {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL;
       const params = new URLSearchParams({
         maxDuration: maxDuration ? String(maxDuration) : '',
         maxDistance: maxDistance ? String(maxDistance) : '',
@@ -47,7 +48,7 @@ export function Rent() {
 
       setMonitoringRequest({ request: 'pending' });
 
-      const response = await (await fetch(`http://localhost:3000/api/cars?` + params)).json();
+      const response = await (await fetch(`${apiUrl}/cars?` + params)).json();
 
       console.log(response);
       
