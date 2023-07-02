@@ -10,7 +10,7 @@ interface StyledButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 export const StyledButton = styled.button<StyledButtonProps>`
   display: flex;
   align-items: center;
-  padding: 1.25rem 2rem;
+  padding: 0.8rem 2rem;
   border: none;
   border-radius: 0.25rem;
   color: ${props => props.color ? props.color : props.theme.colors.buttonText};

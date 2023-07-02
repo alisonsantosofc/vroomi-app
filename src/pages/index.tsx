@@ -1,15 +1,18 @@
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 
-import { Dashboard } from '../views/Dashboard';
+import { Home } from '../views/Home';
+import { About } from '@/views/About';
 
-export default function Home() {
+export default function HomePage() {
   return (
     <>
       <Head>
-        <title>Vroomi - Dashboard</title>
+        <title>Vroomi - Home</title>
       </Head>
-      <Dashboard />
+      
+      <Home />
+      <About />
     </>
   );
 }

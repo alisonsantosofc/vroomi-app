@@ -10,7 +10,7 @@ import slider from '../../assets/images/slider.png';
 
 import { StyledDashboard } from './styles';
 
-export function Dashboard() {
+export function Home() {
   const router = useRouter();
 
   const handleClick = (e: React.FormEvent) => {
@@ -20,7 +20,7 @@ export function Dashboard() {
   };
 
   return (
-    <StyledDashboard className="container">
+    <StyledDashboard className="container" id="home">
       <section className="dashboard-section section">
         <div className="dashboard-slogan">
           <h1>Alugue carros de uma forma prática e rápida</h1>

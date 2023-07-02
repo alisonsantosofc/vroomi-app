@@ -37,7 +37,7 @@ export function MyApp({children}: MyAppProps) {
           
           {children}
 
-        <Footer />
+          <Footer />
         </>
       </StyledComponentsRegistry>
     </ThemeProvider>
