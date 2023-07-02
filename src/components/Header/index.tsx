@@ -94,7 +94,7 @@ export function Header() {
             <Link 
               href="/signin"
             >
-              Conecte-se
+              Entrar
             </Link>
           </Button>
 
@@ -106,7 +106,7 @@ export function Header() {
             <Link 
               href="/signup"
             >
-              Inscreva-se
+              Criar conta
             </Link>
           </Button>
         </div>
