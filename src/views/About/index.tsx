@@ -1,6 +1,3 @@
-import { FileArrowDown } from "phosphor-react";
-
-import { Button } from "../../components/Button";
 import { AboutInfo } from "./Info";
 
 import { StyledAbout } from "./styles";
@@ -40,7 +37,7 @@ export function About() {
         </div>
 
         <div className="img-container">
-          <Image src="/wheel.png" width={400} height={10} alt="wheel" />
+          <Image src="/car.png" width={400} height={10} alt="wheel" />
         </div>
       </div>
     </StyledAbout>
