@@ -128,6 +128,9 @@ export const StyledFleet = styled.section`
     }
   }
   @media screen and (max-width: 768px) {
+    padding: 0.5rem;
+    overflow-x: hidden;
+    
     .contact-container {
       .contact-cards {
         grid-template-columns: 1fr;
