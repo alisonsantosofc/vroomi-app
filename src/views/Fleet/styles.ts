@@ -19,8 +19,9 @@ export const StyledFleet = styled.section`
     box-shadow: ${({theme}) => theme.effects.shadowAround};
     border-radius: 0.75rem;
 
-    img {
-      width: 48px;
+    svg {
+      width: 4rem;
+      height: auto;
     }
   }
 

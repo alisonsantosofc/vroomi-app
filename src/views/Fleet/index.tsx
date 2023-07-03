@@ -1,36 +1,11 @@
-import { useEffect, useState } from "react";
-import Image from "next/image";
-
-import { Brand } from "@/@types/Brand";
+import { CustomSVG } from "@/components/CustomSVG";
 
 import { StyledFleet } from "./styles";
-import { toast } from "react-toastify";
-import { Toast } from "@/components/Toast";
+import { useDarkMode } from "@/hooks/useDarkMode";
+import { darkTheme, lightTheme } from "@/styles/themes";
 
 export function Fleet() {
-  const [brands, setBrands] = useState<Brand[]>([]);
-
-  useEffect(() => {
-    async function getBrands() {
-      try {
-        const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-
-        const response = await (await fetch(`${apiUrl}/brands?`)).json();
-
-        setBrands(response.brands);
-      } catch (err) {
-        toast.error(
-          <Toast
-            type="error"
-            title="Erro no Servidor"
-            message="Não foi possível conectar o dispositivo ao servidor, por favor tente novamente mais tarde."
-          />
-        );
-      }
-    }
-
-    getBrands();
-  }, []);
+  const { darkMode } = useDarkMode();
 
   return (
     <StyledFleet className="section" id="fleet">
@@ -38,16 +13,54 @@ export function Fleet() {
       <span className="section-subtitle">Trabalhamos com as melhores marcas</span>
 
       <div className="fleet-container container grid">
-        {brands.map(brand => (
-          <div className="brand-card" key={brand.id}>
-            <Image
-              src={require(`../../../public/brands/${brand.slug}.svg`)}
-              alt={brand.slug}
-              width={300}
-              height={150}
-            />
-          </div>
-        ))}
+        <div className="brand-card">
+          <CustomSVG.Chevrolet color={!darkMode ? lightTheme.colors.title : darkTheme.colors.title} />
+        </div>
+        <div className="brand-card">
+          <CustomSVG.Fiat color={!darkMode ? lightTheme.colors.title : darkTheme.colors.title} />
+        </div>
+        <div className="brand-card">
+          <CustomSVG.Citroen color={!darkMode ? lightTheme.colors.title : darkTheme.colors.title} />
+        </div>
+        <div className="brand-card">
+          <CustomSVG.Ford color={!darkMode ? lightTheme.colors.title : darkTheme.colors.title} />
+        </div>
+        <div className="brand-card">
+          <CustomSVG.Chrysler color={!darkMode ? lightTheme.colors.title : darkTheme.colors.title} />
+        </div>
+        <div className="brand-card">
+          <CustomSVG.Honda color={!darkMode ? lightTheme.colors.title : darkTheme.colors.title} />
+        </div>
+        <div className="brand-card">
+          <CustomSVG.Kia color={!darkMode ? lightTheme.colors.title : darkTheme.colors.title} />
+        </div>
+        <div className="brand-card">
+          <CustomSVG.Hyundai color={!darkMode ? lightTheme.colors.title : darkTheme.colors.title} />
+        </div>
+        <div className="brand-card">
+          <CustomSVG.Lexus color={!darkMode ? lightTheme.colors.title : darkTheme.colors.title} />
+        </div>
+        <div className="brand-card">
+          <CustomSVG.Nissan color={!darkMode ? lightTheme.colors.title : darkTheme.colors.title} />
+        </div>
+        <div className="brand-card">
+          <CustomSVG.Peugeot color={!darkMode ? lightTheme.colors.title : darkTheme.colors.title} />
+        </div>
+        <div className="brand-card">
+          <CustomSVG.Renault color={!darkMode ? lightTheme.colors.title : darkTheme.colors.title} />
+        </div>
+        <div className="brand-card">
+          <CustomSVG.Suzuki color={!darkMode ? lightTheme.colors.title : darkTheme.colors.title} />
+        </div>
+        <div className="brand-card">
+          <CustomSVG.Tesla color={!darkMode ? lightTheme.colors.title : darkTheme.colors.title} />
+        </div>
+        <div className="brand-card">
+          <CustomSVG.Toyota color={!darkMode ? lightTheme.colors.title : darkTheme.colors.title} />
+        </div>
+        <div className="brand-card">
+          <CustomSVG.Volkswagen color={!darkMode ? lightTheme.colors.title : darkTheme.colors.title} />
+        </div>
       </div>
     </StyledFleet>
   )

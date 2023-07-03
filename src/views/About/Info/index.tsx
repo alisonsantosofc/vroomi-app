@@ -7,7 +7,7 @@ export function AboutInfo() {
         <Medal />
         <div>
           <h3>Conforto</h3>
-          <p>garantida ou seu <span>6</span> anos alugando carros</p>
+          <p>garantido ou seu <span>dinheiro</span> de volta</p>
         </div>
       </div>
 

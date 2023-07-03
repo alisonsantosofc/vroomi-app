@@ -27,7 +27,7 @@ export function Home() {
           <p>
             Os melhores modelos de carros já estão disponíveis no{' '}
             <span>Renter Club</span>, assine por apenas{' '}
-            <span>R$ 18,98</span> e receba
+            <span>R$ 119,99</span> e receba
             descontos especiais todos os meses!
           </p>
         </div>
