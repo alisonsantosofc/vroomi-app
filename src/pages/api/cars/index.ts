@@ -24,9 +24,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       cars = cars.filter((car) => Number(maxDistance) <= car.availability.maxDistance);
     }
 
-    setTimeout(() => {
-      res.status(200).json({ cars });
-    }, 2000);
+    res.status(200).json({ cars });
   } else {
     // Caso a requisição não seja GET, retorne um erro
     res.status(405).json({ message: 'Método não permitido' });

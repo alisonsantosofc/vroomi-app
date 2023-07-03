@@ -1,8 +1,8 @@
 import Image from 'next/image';
 
 import { Button } from '@/components/Button';
-import { Car } from '@/views/Rent';
 
+import { Car } from '@/@types/Car';
 import { formatAmount } from '@/utils/format';
 
 import { Container } from './styles';

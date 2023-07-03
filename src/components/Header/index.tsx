@@ -64,11 +64,11 @@ export function Header() {
             </li>
             <li>
               <Link 
-                href="/#services"
-                className={`nav-link ${activeSection === 'services' ? 'active' : ''}`} 
-                onClick={() => setActiveSection("services")}
+                href="/#fleet"
+                className={`nav-link ${activeSection === 'fleet' ? 'active' : ''}`} 
+                onClick={() => setActiveSection("fleet")}
               >
-                <Briefcase /> Serviços
+                <Briefcase /> Frota
               </Link>
             </li>
             <li>

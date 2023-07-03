@@ -3,6 +3,7 @@ import Head from 'next/head';
 
 import { Home } from '../views/Home';
 import { About } from '@/views/About';
+import { Fleet } from '@/views/Fleet';
 
 export default function HomePage() {
   return (
@@ -13,6 +14,7 @@ export default function HomePage() {
       
       <Home />
       <About />
+      <Fleet />
     </>
   );
 }

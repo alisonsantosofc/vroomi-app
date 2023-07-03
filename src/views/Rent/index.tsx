@@ -5,23 +5,13 @@ import { MagnifyingGlass, SmileySad } from '@phosphor-icons/react';
 import { Input } from '../../components/Input';
 import { Toast } from '../../components/Toast';
 import { Loader } from '../../components/Loader';
+import { Button } from '@/components/Button';
 import { RentCarModal } from './RentCarModal';
 import { CarCard } from './CarCard';
 
-import { StyledRent } from './styles';
-import { Button } from '@/components/Button';
+import { Car } from '@/@types/Car';
 
-export interface Car {
-  id?: string;
-  brand: string;
-  model: string;
-  pricePerDay: number;
-  pricePerKm: number;
-  availability: {
-    maxDuration: number;
-    maxDistance: number;
-  }
-}
+import { StyledRent } from './styles';
 
 interface RequestState {
   request: 'pending' | 'success' | 'failed';

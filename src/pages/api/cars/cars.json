@@ -91,7 +91,7 @@
     "availability": { "maxDuration": 3, "maxDistance": 200 }
   },
   {
-    "brand": "Cordobra",
+    "brand": "Chrysler",
     "model": "2012 Mii",
     "pricePerDay": 180,
     "pricePerKm": 34,
@@ -147,7 +147,7 @@
     "availability": { "maxDuration": 10, "maxDistance": 2650 }
   },
   {
-    "brand": "Susuki",
+    "brand": "Suzuki",
     "model": "Jimmy",
     "pricePerDay": 240,
     "pricePerKm": 20,
@@ -224,7 +224,7 @@
     "availability": { "maxDuration": 12, "maxDistance": 1800 }
   },
   {
-    "brand": "Hynday",
+    "brand": "Hyundai",
     "model": "Suv",
     "pricePerDay": 150,
     "pricePerKm": 41,
@@ -245,7 +245,7 @@
     "availability": { "maxDuration": 17, "maxDistance": 2900 }
   },
   {
-    "brand": "Volkswagem",
+    "brand": "Volkswagen",
     "model": "Polo Blue GT",
     "pricePerDay": 170,
     "pricePerKm": 17,
@@ -259,7 +259,7 @@
     "availability": { "maxDuration": 2, "maxDistance": 200 }
   },
   {
-    "brand": "Volkswagem",
+    "brand": "Volkswagen",
     "model": "Passat",
     "pricePerDay": 240,
     "pricePerKm": 26,
