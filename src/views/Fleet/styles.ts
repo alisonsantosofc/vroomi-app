@@ -17,7 +17,13 @@ export const StyledFleet = styled.section`
     justify-content: center;
     padding: 1rem;
     box-shadow: ${({theme}) => theme.effects.shadowAround};
+    background: ${({theme}) => theme.colors.containerBg};
     border-radius: 0.75rem;
+    transition: .3s;
+
+    &:hover {
+      background: ${({theme}) => theme.effects.hoverLight(theme.colors.containerBg)};
+    }
 
     svg {
       width: 4rem;
