@@ -14,6 +14,7 @@ export const lightTheme = {
 
     // backgrounds
     bodyBg: '#d8dfee',
+    shapeBg: '#e2e8f5',
     containerBg: '#e6ecf9',
     inputBg: '#ccd2df',
     fadeBg: 'rgba(30, 30, 30, 0.3)',
@@ -60,6 +61,7 @@ export const darkTheme = {
 
     // backgrounds
     bodyBg: '#131416',
+    shapeBg: '#1f2022',
     containerBg: '#26282b',
     inputBg: '#3b3d41',
     fadeBg: 'rgba(10, 10, 10, 0.4)',
