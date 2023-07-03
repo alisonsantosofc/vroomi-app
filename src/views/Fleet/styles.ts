@@ -27,11 +27,14 @@ export const StyledFleet = styled.section`
   // Breakpoints
   /* For large devices */
   @media screen and (max-width: 992px) {
-  }
-  /* For medium devices */
-  @media screen and (max-width: 768px) {
+    .fleet-container {
+      width: auto;
+    }
   }
   @media screen and (max-width: 576px) {
+    .fleet-container {
+      grid-template-columns: 1fr 1fr;
+    }
   }
   /* For small devices */
   @media screen and (max-width: 350px) {
