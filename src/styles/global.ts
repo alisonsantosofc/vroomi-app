@@ -156,7 +156,7 @@ export const GlobalStyles = createGlobalStyle`
       padding: 2rem 0 2rem;
     }
 
-    .container {
+    html {
       overflow-x: hidden;
     }
   }
