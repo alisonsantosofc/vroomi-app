@@ -3,7 +3,8 @@ import ReactModal from 'react-modal';
 import { X } from "@phosphor-icons/react";
 
 import { Button } from '@/components/Button';
-import { Car } from '@/views/Rent';
+import { Car } from '@/@types/Car';
+
 
 import { formatAmount } from '@/utils/format';
 
