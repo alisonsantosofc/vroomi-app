@@ -155,6 +155,10 @@ export const GlobalStyles = createGlobalStyle`
     .section {
       padding: 2rem 0 2rem;
     }
+
+    .container {
+      overflow-x: hidden;
+    }
   }
 
   @media screen and (max-width: 576px) {
