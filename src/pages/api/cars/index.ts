@@ -2,7 +2,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 import importedCars from "./cars.json";
-import { Car } from '@/views/Rent';
+import { Car } from '@/@types/Car';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   function addId(cars: Omit<Car, "id">[]) {

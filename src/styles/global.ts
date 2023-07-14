@@ -170,6 +170,10 @@ export const GlobalStyles = createGlobalStyle`
 
   /* For medium devices */
   @media screen and (max-width: 768px) {
+    html {
+      overflow-x: hidden;
+    }
+
     body {
       margin: 0 0 3rem 0;
     }
