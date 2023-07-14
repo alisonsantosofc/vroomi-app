@@ -4,7 +4,6 @@ import Image from 'next/image';
 import { Check } from '@phosphor-icons/react';
 
 import { Button } from '../../components/Button';
-import { ScrollDown } from './ScrollDown';
 
 import slider from '../../assets/images/slider.png';
 
@@ -40,8 +39,6 @@ export function Home() {
         </div>
 
         <div className="dashboard-info">
-          <ScrollDown />
-
           <div className="count-container">
             <Check weight="bold" />
 

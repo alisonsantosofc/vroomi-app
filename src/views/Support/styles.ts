@@ -83,12 +83,13 @@ export const StyledFleet = styled.section`
 
       &:last-child {
         svg {
-          color: ${({theme}) => theme.colors.main500};
+          color: ${({theme}) => theme.colors.blue500};
         }
       }
 
       span {
         margin-top: 0.2rem;
+        color: ${({theme}) => theme.colors.label};
       }
 
       a {
@@ -118,12 +119,6 @@ export const StyledFleet = styled.section`
 
       .user-data {
         grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    .btn-container {
-      button {
-        font-size: 0.9rem;
       }
     }
   }

@@ -8,6 +8,7 @@ export const StyledDashboard = styled.section`
 
   .dashboard-section {
     margin-top: 2rem;
+    
     .dashboard-slogan {
       display: flex;
       flex-direction: column;
@@ -60,7 +61,7 @@ export const StyledDashboard = styled.section`
 
   .dashboard-info {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     margin: 4rem 0 0;
   }
@@ -108,6 +109,7 @@ export const StyledDashboard = styled.section`
   /* For medium devices */
   @media screen and (max-width: 768px) {
     .dashboard-section {
+      margin-top: 0;
 
       .dashboard-slogan {
         h1 {
@@ -117,7 +119,7 @@ export const StyledDashboard = styled.section`
 
         p {
           font-size: 1rem;
-          max-width: 80%;
+          max-width: 100%;
         }
       }
     }
