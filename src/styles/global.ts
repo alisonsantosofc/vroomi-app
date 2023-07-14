@@ -138,12 +138,33 @@ export const GlobalStyles = createGlobalStyle`
     }
   }
 
+  .react-toastfy-container {
+    width: 512px;
+    margin-top: -1rem;
+  }
+
+  .react-toastfy-content {
+    font-family: "Montserrat";
+    font-size: 1rem;
+    background: ${props => props.theme.colors.containerBg};
+    width: 100%;
+    color: ${props => props.theme.colors.text};
+  }
+
+  .react-toastfy-progress {
+    background: ${props => props.theme.colors.label};
+  }
+
   /*=== Breakpoints ===*/
   /* For large devices */
   @media screen and (max-width: 992px) {
     .container {
       margin-left: 1.5rem;
       margin-right: 1.5rem;
+    }
+
+    .react-toastfy-container {
+      width: 80%;
     }
   }
 
@@ -152,8 +173,13 @@ export const GlobalStyles = createGlobalStyle`
     body {
       margin: 0 0 3rem 0;
     }
+
     .section {
       padding: 2rem 0 2rem;
+    }
+
+    .react-toastfy-container {
+      width: 100%;
     }
   }
 

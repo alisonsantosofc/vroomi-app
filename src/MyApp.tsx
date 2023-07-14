@@ -28,6 +28,7 @@ export function MyApp({children}: MyAppProps) {
             autoClose={5000}
             className="react-toastfy-container"
             toastClassName="react-toastfy-content"
+            progressClassName="react-toastfy-progress"
             icon={false}
             closeButton={false}
             position="top-center"

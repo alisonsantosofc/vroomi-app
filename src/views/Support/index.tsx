@@ -13,8 +13,6 @@ export function Support() {
       <span className="section-subtitle">Nossa equipe sempre disponível</span>
 
       <div className="support-container container">
-        <HandHeart />
-
         <form>
           <div className="user-data">
             <Input placeholder="Nome" />

@@ -1,13 +1,28 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+function getIconColor(type: string, colors: any): string {
+  switch (type) {
+    case 'info':
+      return colors.blue500;
+    case 'success':
+      return colors.green500;
+    case 'warning':
+      return colors.orange500;
+    case 'error':
+      return colors.red500;
+    default:
+      return colors.gray300;
+  }
+}
+
+export const Container = styled.div<{type: string}>`
   display: flex;
   align-items: center;
-  width: 100%;
 
-  svg {
-    font-size: 8rem;
+  .smiley-icon {
+    font-size: 6rem;
     margin: 0 0.5rem;
+    color: ${({type, theme}) => getIconColor(type, theme.colors)};
   }
 
   .message-content {

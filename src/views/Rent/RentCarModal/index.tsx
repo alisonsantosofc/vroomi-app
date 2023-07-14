@@ -3,11 +3,11 @@ import ReactModal from 'react-modal';
 import { X } from "@phosphor-icons/react";
 
 import { Button } from '@/components/Button';
-import { Car } from '@/views/Rent';
 
 import { formatAmount } from '@/utils/format';
 
 import { StyledRentCarModal } from './styles';
+import { Car } from '@/@types/Car';
 
 interface RentCarModalProps {
   isOpen: boolean;

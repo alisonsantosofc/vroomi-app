@@ -9,29 +9,24 @@ interface ToastProps {
 }
 
 export function Toast({ title, message, type }: ToastProps) {
-  function setIcon() {
+  function getIcon() {
     switch (type) {
       case 'info':
-        return <Smiley color="#4da5e0" />;
-        break;
+        return <Smiley className="smiley-icon" />;
       case 'success':
-        return <SmileyWink color="#59ae54" />;
-        break;
+        return <SmileyWink className="smiley-icon" />;
       case 'warning':
-        return <SmileyNervous color="#e99a39" />;
-        break;
+        return <SmileyNervous className="smiley-icon" />;
       case 'error':
-        return <SmileySad color="#e34747" />;
-        break;
+        return <SmileySad className="smiley-icon" />;
       default:
-        return <Smiley color="#4da5e0" />;
-        break;
+        return <Smiley className="smiley-icon" />;
     }
   }
 
   return (
-    <Container>
-      {setIcon()}
+    <Container type={type}>
+      {getIcon()}
 
       <div className="message-content">
         <h4>{title}</h4>
