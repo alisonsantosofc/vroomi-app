@@ -103,20 +103,34 @@ export const HeaderContainer = styled.header`
         right: 0;
         width: 100%;
         background-color: ${({theme}) => theme.colors.bodyBg};
-        padding: 2.5rem 0 4rem;
         box-shadow: ${({theme}) => theme.effects.shadowTop};
         border-radius: 1.5rem 1.5rem 0 0;
         transition: all 2s;
-        overflow: hidden;
+        padding-top: 1rem;
+        padding-bottom: 3rem;
 
         &.show {
           bottom: 0;
           animation: menu_animate 1s ease-in-out .5s 1;
         }
 
+        .nav-close {
+          position: absolute;
+          right: 1rem;
+          top: 1rem;
+          font-size: 1.2rem;
+          cursor: pointer;
+          color: ${({theme}) => theme.colors.title};
+
+          &:hover {
+            color: ${({theme}) => theme.effects.hoverLight(theme.colors.title)};
+          }
+        }
+
         ul {
+          padding: 2rem;
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
+          grid-template-columns: repeat(4, 1fr);
           gap: 2rem;
 
           .nav-link {
@@ -136,19 +150,6 @@ export const HeaderContainer = styled.header`
                 display: none;
               }
             }
-          }
-        }
-
-        .nav-close {
-          position: absolute;
-          right: 1.8rem;
-          bottom: 1rem;
-          font-size: 1.5rem;
-          cursor: pointer;
-          color: ${({theme}) => theme.colors.title};
-
-          &:hover {
-            color: ${({theme}) => theme.effects.hoverLight(theme.colors.title)};
           }
         }
       }

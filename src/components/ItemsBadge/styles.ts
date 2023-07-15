@@ -47,15 +47,15 @@ interface StyledPopoverProps {
 }
 
 export const StyledPopover = styled.div<StyledPopoverProps>`
+  display: none;
   margin-top: 1rem;
   position: absolute;
   background: ${({theme}) => theme.colors.containerBg};
   min-width: 256px;
-  min-height: 128px;
+  max-height: 256px;
   border-radius: 0.25rem;
   box-shadow: ${({theme}) => theme.effects.shadowAround};
   padding: 1rem;
-  opacity: 0;
   ${({hasTitle}) => !hasTitle && 'padding-top: 1.5rem;'}
   ${({align}) => align === 'left' 
     ? 'left: 0;'
@@ -67,7 +67,7 @@ export const StyledPopover = styled.div<StyledPopoverProps>`
   }
 
   &.show {
-    opacity: 1;
+    display: block;
   }
 
   .btn-close {
@@ -104,6 +104,24 @@ export const StyledPopover = styled.div<StyledPopoverProps>`
       border-right: 8px solid transparent;
       border-bottom: 8px solid ${({theme}) => theme.colors.containerBg};
       margin: 0 1rem;
+    }
+  }
+
+  /*=== Breakpoints ===*/
+  /* For medium devices */
+  @media screen and (max-width: 768px) {
+    top: -580%;
+    right: -250%;
+
+    .arrow-container {
+      top: 100%;
+      bottom: 0;
+      justify-content: center;
+
+      .arrow {
+        border-bottom: 8px solid #ffffff00;
+        border-top: 8px solid ${({theme}) => theme.colors.containerBg};
+      }
     }
   }
 `;

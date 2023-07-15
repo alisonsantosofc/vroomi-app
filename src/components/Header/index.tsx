@@ -46,6 +46,8 @@ export function Header() {
         
 
         <div className={`nav-menu ${isOpenMenu ? 'show' : ''}`}>
+          <X className="nav-close" onClick={() => setIsOpenMenu(!isOpenMenu)} />
+        
           <ul className="grid">
             <li>
               <Link 
@@ -84,8 +86,6 @@ export function Header() {
               </Link>
             </li>
           </ul>
-
-          <X className="nav-close" onClick={() => setIsOpenMenu(!isOpenMenu)} />
         </div>
 
         <ItemsBadge.Root>
