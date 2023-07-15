@@ -105,19 +105,17 @@ export const HeaderContainer = styled.header`
 
       .nav-menu {
         position: fixed;
-        bottom: -100%;
-        right: 0;
+        bottom: 3.5rem;
+        right: -100%;
         width: 100%;
         background-color: ${({theme}) => theme.colors.bodyBg};
         box-shadow: ${({theme}) => theme.effects.shadowTop};
         border-radius: 1.5rem 1.5rem 0 0;
         transition: all 2s;
         padding-top: 1rem;
-        padding-bottom: 3rem;
 
         &.show {
-          bottom: 0;
-          animation: menu_animate 1s ease-in-out .5s 1;
+          right: 0;
         }
 
         .nav-close {
@@ -136,8 +134,9 @@ export const HeaderContainer = styled.header`
         ul {
           padding: 2rem;
           display: grid;
-          grid-template-columns: repeat(4, 1fr);
+          grid-template-columns: repeat(3, 1fr);
           gap: 2rem;
+          padding-bottom: 8rem;
 
           .nav-link {
             position: relative;
@@ -187,16 +186,6 @@ export const HeaderContainer = styled.header`
           column-gap: 0;
         }
       }
-    }
-  }
-
-  @keyframes menu_animate {
-    0% {
-      border-radius: 100% 1.5rem 0 0;
-    }
-
-    100% {
-      border-radius: 1.5rem 1.5rem 0 0;
     }
   }
 `;
