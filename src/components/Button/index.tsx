@@ -3,7 +3,7 @@ import { StyledButton } from './styles';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   color?: string;
-  typed?: "success" | "warning" | "info" | "error" | "transparent";
+  typed?: "success" | "warning" | "info" | "error" | "transparent" | "main";
   size?: "small" | "normal" | "large";
   icon?: ReactNode;
 }

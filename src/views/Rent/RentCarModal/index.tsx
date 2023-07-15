@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import Image from 'next/image';
 import ReactModal from 'react-modal';
 import { X } from "@phosphor-icons/react";
@@ -9,6 +10,9 @@ import { Car } from '@/@types/Car';
 import { formatAmount } from '@/utils/format';
 
 import { StyledRentCarModal } from './styles';
+import { useRentals } from '@/hooks/useRentals';
+import dayjs from 'dayjs';
+
 
 interface RentCarModalProps {
   isOpen: boolean;
@@ -17,18 +21,21 @@ interface RentCarModalProps {
 }
 
 export function RentCarModal({ car, isOpen, onRequestClose }: RentCarModalProps) {
-  function handleCloseModal() {
-    onRequestClose();
-  }
+  const { createRental } = useRentals();
+  const router = useRouter();
 
-  async function handleCreateNewTransaction() {
-    handleCloseModal();
+  async function handleCreateRental() {
+    const expectedReturnDate = dayjs().add(car.availability.maxDuration, "days").toDate();
+    
+    createRental(car, expectedReturnDate);
+
+    onRequestClose();
   }
 
   return (
     <ReactModal
       isOpen={isOpen}
-      onRequestClose={handleCloseModal}
+      onRequestClose={onRequestClose}
       overlayClassName="react-modal-overlay"
       className="react-modal-content"
       ariaHideApp={false}
@@ -92,7 +99,7 @@ export function RentCarModal({ car, isOpen, onRequestClose }: RentCarModalProps)
           </div>
         </div>
 
-        <Button size="large">Alugar agora</Button>
+        <Button typed="main" size="large" onClick={handleCreateRental}>Alugar agora</Button>
       </StyledRentCarModal>
     </ReactModal>
   );

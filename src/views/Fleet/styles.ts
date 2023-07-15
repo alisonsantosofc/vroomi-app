@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledFleet = styled.section`
-  margin-bottom: 6rem;
+  margin-bottom: 4rem;
 
   .fleet-container {
     width: 768px;

@@ -113,7 +113,7 @@ export const StyledDashboard = styled.section`
 
       .dashboard-slogan {
         h1 {
-          font-size: 2.5rem;
+          font-size: 2rem;
           max-width: 100%;
         }
 

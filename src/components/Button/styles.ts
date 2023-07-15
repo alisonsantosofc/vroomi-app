@@ -3,7 +3,7 @@ import { ButtonHTMLAttributes } from "react";
 
 interface StyledButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   color?: string;
-  typed?: "success" | "warning" | "info" | "error" | "transparent";
+  typed?: "success" | "warning" | "info" | "error" | "transparent" | "main";
   size?: "small" | "normal" | "large";
 }
 
@@ -27,12 +27,15 @@ export const StyledButton = styled.button<StyledButtonProps>`
     : typed === "error"
     ? theme.colors.red500
     : typed === "transparent"
-    && theme.colors.bodyBg
+    ? theme.colors.bodyBg
+    : typed === "main"
+    && theme.colors.main500
   };
 
   color: ${props => props.typed === "transparent" && props.theme.colors.text};
 
   width: ${props => props.size === "large" ? '100%' : ''};
+  justify-content: ${props => props.size === "large" ? 'center' : ''};
 
   padding: ${props => props.size === "small" ? '0.5rem 1rem;' : ''};
   font-size: ${props => props.size === "small" ? '0.9rem' : ''};
@@ -56,7 +59,9 @@ export const StyledButton = styled.button<StyledButtonProps>`
       : typed === "error"
       ? theme.effects.hoverLight(theme.colors.red500)
       : typed === "transparent"
-      && theme.effects.hoverLight(theme.colors.bodyBg)
+      ? theme.effects.hoverLight(theme.colors.bodyBg)
+      : typed === "main"
+      && theme.effects.hoverLight(theme.colors.main500)
     };
   }
 

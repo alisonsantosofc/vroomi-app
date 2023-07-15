@@ -5,9 +5,13 @@ import importedCars from "./cars.json";
 import { Car } from '@/@types/Car';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  function addId(cars: Omit<Car, "id">[]) {
+  function addId(cars: Omit<Car, "id" | "available">[]) {
     return cars.map((car, i) => {
-      return { id: i + 1, ...car };
+      return { 
+        ...car, 
+        id: i + 1,
+        available: true,
+      };
     });
   }
   

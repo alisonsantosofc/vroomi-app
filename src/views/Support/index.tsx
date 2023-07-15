@@ -27,10 +27,10 @@ export function Support() {
         </form>
 
         <div className="btn-container">
-          <Button typed="transparent" icon={<Gear />}>
+          <Button typed="transparent">
             <Link href={"/support"}>Tentar resolver agora</Link>
           </Button>
-          <Button icon={<PaperPlaneTilt />}>Solicitar suporte</Button>
+          <Button>Solicitar suporte</Button>
         </div>
 
         <div className="contact-container">

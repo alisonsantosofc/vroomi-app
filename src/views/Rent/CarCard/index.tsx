@@ -5,7 +5,7 @@ import { Button } from '@/components/Button';
 import { Car } from '@/@types/Car';
 import { formatAmount } from '@/utils/format';
 
-import { Container } from './styles';
+import { StyledCarCard } from './styles';
 
 interface CarCardProps {
   car: Car;
@@ -14,7 +14,7 @@ interface CarCardProps {
 
 export function CarCard({car, handleRentCar}: CarCardProps) {
   return (
-    <Container>
+    <StyledCarCard disabled={car.available ? false : true}>
       <Image
         src={require(`../../../../public/cars/${car.id}.png`)}
         alt={car.model}
@@ -54,8 +54,8 @@ export function CarCard({car, handleRentCar}: CarCardProps) {
       </div>
 
       <div className="btn-container">
-        <Button onClick={() => handleRentCar(car)}>Alugar</Button>
+        <Button typed="main" size="large" onClick={() => handleRentCar(car)}>Alugar</Button>
       </div>
-    </Container>
+    </StyledCarCard>
   );
 }

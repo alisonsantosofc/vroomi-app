@@ -69,31 +69,6 @@ export const HeaderContainer = styled.header`
     }
   }
 
-  .btn-container {
-    display: flex;
-    gap: 0.75rem;
-
-    .nav-button {
-      &.signin {
-        color: ${({theme}) => theme.colors.textContrast};
-        background: ${({theme}) => theme.colors.main500};
-        
-        &:hover {
-          background: ${({theme}) => theme.effects.hoverLight(theme.colors.main500)};
-        }
-      }
-
-      &.signup {
-        color: ${({theme}) => theme.colors.textContrast};
-        background: ${({theme}) => theme.colors.title};
-        
-        &:hover {
-          background: ${({theme}) => theme.effects.hoverLight(theme.colors.title)};
-        }
-      }
-    }
-  }
-
   .nav-toggle {
     svg {
       font-size: 2rem;
@@ -195,22 +170,6 @@ export const HeaderContainer = styled.header`
   }
 
   @media screen and (max-width: 576px) {
-    .btn-container {
-      display: flex;
-      gap: 0.75rem;
-
-      .nav-button {
-        padding: 0.5rem;
-
-        a {
-          display: none;
-        }
-
-        svg {
-          margin: 0;
-        }
-      }
-    }
   }
 
   /* For small devices */

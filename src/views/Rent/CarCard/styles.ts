@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.li`
+export const StyledCarCard = styled.li<{disabled: boolean}>`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -11,6 +11,8 @@ export const Container = styled.li`
   background: ${({theme}) => theme.colors.containerBg};
   box-shadow: ${({theme}) => theme.effects.shadowAround};
   margin-top: 4rem;
+  transition: .3s;
+  opacity: ${({disabled}) => disabled && '0.5'};
 
   img {
     position: absolute;
@@ -23,6 +25,7 @@ export const Container = styled.li`
     justify-content: space-between;
     align-items: center;
     margin-top: 5rem;
+    color: ${({theme}) => theme.colors.title};
 
     p {
       display: flex;
@@ -39,8 +42,10 @@ export const Container = styled.li`
     width: 100%;
     display: flex;
     flex-direction: column;
+    gap: 0.25rem;
 
     p {
+      font-size: 0.9rem;
       span {
         font-weight: 600;
       }
@@ -51,13 +56,6 @@ export const Container = styled.li`
     margin: 1rem;
     width: 100%;
     display: flex;
-
-    button {
-      justify-content: center;
-      width: 100%;
-      padding: 0.8rem 1rem;
-      background: ${({theme}) => theme.colors.main500};
-    }
   }
 
   // Breakpoints

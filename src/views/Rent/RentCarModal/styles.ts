@@ -57,8 +57,6 @@ export const StyledRentCarModal = styled.div`
 
   button {
     margin-top: 2rem;
-    background: ${({theme}) => theme.colors.main500};
-    justify-content: center;
   }
 
   // Breakpoints

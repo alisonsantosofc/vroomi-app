@@ -1,5 +1,5 @@
 import { toast } from 'react-toastify';
-import { KeyboardEvent, useState } from 'react';
+import { KeyboardEvent, useEffect, useState } from 'react';
 import { MagnifyingGlass, SmileySad } from '@phosphor-icons/react';
 
 import { Input } from '../../components/Input';
@@ -12,12 +12,15 @@ import { CarCard } from './CarCard';
 import { Car } from '@/@types/Car';
 
 import { StyledRent } from './styles';
+import { useRentals } from '@/hooks/useRentals';
 
 interface RequestState {
   request: 'pending' | 'success' | 'failed';
 }
 
 export function Rent() {
+  const { rentals } = useRentals();
+
   const [cars, setCars] = useState<Car[]>([]);
   const [maxDuration, setMaxDuration] = useState(0);
   const [maxDistance, setMaxDistance] = useState(0);
@@ -41,7 +44,18 @@ export function Rent() {
 
       const response = await (await fetch(`${apiUrl}/cars?` + params)).json();
 
-      setCars(response.cars);
+      const cars: Car[] = response.cars;
+      
+      cars.forEach((car) => {
+        const isRented = rentals.filter(rental => rental.carId === car.id);
+        const carIndex = cars.findIndex(carFind => carFind.id === car.id);
+
+        if (isRented.length) {
+          cars.splice(carIndex, 1, { ...car, available: false });
+        }
+      });
+      
+      setCars(cars);
 
       setMonitoringRequest({ request: 'success' });
     } catch (err) {
@@ -68,6 +82,10 @@ export function Rent() {
     }
   }
 
+  useEffect(() => {
+    handleFindAvailableCars();
+  }, [rentals.length]);
+  
   return (
     <StyledRent className="rent-container container" >
       <div className="rent-find">

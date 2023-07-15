@@ -16,6 +16,7 @@
     "@phosphor-icons/react": "^2.0.10",
     "@prisma/client": "4.16.2",
     "@types/styled-components": "^5.1.26",
+    "dayjs": "^1.11.9",
     "eslint": "8.27.0",
     "eslint-config-next": "13.0.4",
     "framer-motion": "^7.6.7",

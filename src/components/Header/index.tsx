@@ -1,17 +1,20 @@
 import { useState } from "react";
 import Link from "next/link";
-import { Briefcase, House, PaperPlaneTilt, SignIn, SquaresFour, User, UserPlus, X } from "@phosphor-icons/react";
+import { Briefcase, CarProfile, House, PaperPlaneTilt, SignIn, SquaresFour, User, UserPlus, X } from "@phosphor-icons/react";
 
 import { ToggleDarkMode } from "../ToggleDarkMode";
 import { useDarkMode } from "../../hooks/useDarkMode";
 
 import { HeaderContainer } from "./styles";
 import { Button } from "../Button";
+import { ItemsBadge } from "../ItemsBadge";
+import { RentalsListPopover } from "@/views/Rent/RentalsList";
 
 export function Header() {
   const {darkMode, handleSetDarkMode} = useDarkMode();
   
   const [isOpenMenu, setIsOpenMenu] = useState(false);
+  const [isOpenPopover, setIsOpenPopover] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
 
   if (typeof window !== "undefined") {
@@ -85,31 +88,16 @@ export function Header() {
           <X className="nav-close" onClick={() => setIsOpenMenu(!isOpenMenu)} />
         </div>
 
-        <div className="btn-container">
-          <Button 
-            size="small" 
-            className="nav-button signin"
-            icon={<SignIn />}
-          >
-            <Link 
-              href="/signin"
-            >
-              Entrar
-            </Link>
-          </Button>
+        <ItemsBadge.Root>
+          <ItemsBadge.Trigger 
+            icon={<CarProfile />} 
+            setIsOpenPopover={() => setIsOpenPopover(!isOpenPopover)}
+          />
 
-          <Button 
-            size="small" 
-            className="nav-button signup"
-            icon={<UserPlus />}
-          >
-            <Link 
-              href="/signup"
-            >
-              Criar conta
-            </Link>
-          </Button>
-        </div>
+          <ItemsBadge.Popover title="Carros alugados" onClose={() => setIsOpenPopover(false)} isOpen={isOpenPopover}>
+            <RentalsListPopover />
+          </ItemsBadge.Popover>
+        </ItemsBadge.Root>
 
         <div className="nav-toggle" onClick={() => setIsOpenMenu(!isOpenMenu)}>
           <SquaresFour />

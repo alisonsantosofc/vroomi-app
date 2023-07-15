@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledFleet = styled.section`
   justify-content: center;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 
   .support-container {
     position: relative;
@@ -76,14 +76,14 @@ export const StyledFleet = styled.section`
       }
 
       &:first-child {
-        svg {
+        > svg {
           color: ${({theme}) => theme.colors.green500};
         }
       }
 
       &:last-child {
-        svg {
-          color: ${({theme}) => theme.colors.blue500};
+        > svg {
+          color: ${({theme}) => theme.colors.red500};
         }
       }
 

@@ -1,5 +1,5 @@
 export interface Car {
-  id?: string;
+  id: number;
   brand: string;
   model: string;
   pricePerDay: number;
@@ -8,4 +8,5 @@ export interface Car {
     maxDuration: number;
     maxDistance: number;
   }
+  available: boolean;
 }
