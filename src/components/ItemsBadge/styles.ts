@@ -12,6 +12,9 @@ export const StyledTrigger = styled.div`
   width: 32px;
   height: 32px;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   box-shadow: ${({theme}) => theme.effects.shadowAround};
   cursor: pointer;
 
@@ -39,10 +42,25 @@ export const StyledTrigger = styled.div`
       opacity: 1;
     }
   }
+
+  /*=== Breakpoints ===*/
+  /* For medium devices */
+  @media screen and (max-width: 768px) {
+    width: 26px;
+    height: 26px;
+    padding: 0.3rem;
+
+    .badge {
+      font-size: 0.6rem;
+      width: 1rem;
+      height: 1rem;
+      top: -0.3rem;
+      right: -0.3rem;
+    }
+  }
 `;
 
 interface StyledPopoverProps {
-  align?: 'left' | 'right' | 'center';
   hasTitle: boolean;
 }
 
@@ -50,24 +68,23 @@ export const StyledPopover = styled.div<StyledPopoverProps>`
   display: none;
   margin-top: 1rem;
   position: absolute;
+  right: 0;
   background: ${({theme}) => theme.colors.containerBg};
-  min-width: 256px;
-  max-height: 256px;
+  width: 276px;
+  height: 256px;
   border-radius: 0.25rem;
   box-shadow: ${({theme}) => theme.effects.shadowAround};
   padding: 1rem;
   ${({hasTitle}) => !hasTitle && 'padding-top: 1.5rem;'}
-  ${({align}) => align === 'left' 
-    ? 'left: 0;'
-    : align === 'right'
-    ? 'right: 0;'
-    : align === 'center'
-    ? 'right: -235%;'
-    : 'right: 0;'
-  }
 
   &.show {
     display: block;
+  }
+
+  .popover-content {
+    max-height: calc(100% - 2rem);
+    overflow-y: scroll;
+    padding: 0.25rem 0;
   }
 
   .btn-close {
@@ -88,14 +105,7 @@ export const StyledPopover = styled.div<StyledPopoverProps>`
     top: -0.5rem;
     left: 0;
     display: flex;
-    justify-content: ${({align}) => align === 'left' 
-      ? 'flex-start;'
-      : align === 'right'
-      ? 'flex-end;'
-      : align === 'center'
-      ? 'center;'
-      : 'flex-end;'
-    };
+    justify-content: flex-end;
 
     .arrow {
       width: 0;
@@ -110,17 +120,28 @@ export const StyledPopover = styled.div<StyledPopoverProps>`
   /*=== Breakpoints ===*/
   /* For medium devices */
   @media screen and (max-width: 768px) {
-    top: -580%;
-    right: -250%;
+    top: -920%;
+    right: -0.4rem;
 
     .arrow-container {
       top: 100%;
       bottom: 0;
-      justify-content: center;
+      justify-content: flex-end;
 
       .arrow {
-        border-bottom: 8px solid #ffffff00;
+        border-bottom: 8px solid transparent;
         border-top: 8px solid ${({theme}) => theme.colors.containerBg};
+      }
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    width: calc(100vw - 200%);
+    right: -165%;
+
+    .arrow-container {
+      .arrow {
+        margin: 0 4.25rem;
       }
     }
   }

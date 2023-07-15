@@ -88,19 +88,21 @@ export function Header() {
           </ul>
         </div>
 
-        <ItemsBadge.Root>
-          <ItemsBadge.Trigger 
-            icon={<CarProfile />} 
-            setIsOpenPopover={() => setIsOpenPopover(!isOpenPopover)}
-          />
+        <div className="btn-container">
+          <ItemsBadge.Root>
+            <ItemsBadge.Trigger 
+              icon={<CarProfile />} 
+              setIsOpenPopover={() => setIsOpenPopover(!isOpenPopover)}
+            />
 
-          <ItemsBadge.Popover title="Carros alugados" onClose={() => setIsOpenPopover(false)} isOpen={isOpenPopover}>
-            <RentalsListPopover />
-          </ItemsBadge.Popover>
-        </ItemsBadge.Root>
+            <ItemsBadge.Popover title="Carros alugados" onClose={() => setIsOpenPopover(false)} isOpen={isOpenPopover}>
+              <RentalsListPopover />
+            </ItemsBadge.Popover>
+          </ItemsBadge.Root>
 
-        <div className="nav-toggle" onClick={() => setIsOpenMenu(!isOpenMenu)}>
-          <SquaresFour />
+          <div className="nav-toggle" onClick={() => setIsOpenMenu(!isOpenMenu)}>
+            <SquaresFour />
+          </div>
         </div>
       </nav>
     </HeaderContainer>

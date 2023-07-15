@@ -15,6 +15,22 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: 0;
+
+    &::-webkit-scrollbar {
+      width: 12px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: ${({theme}) => theme.colors.containerBg};
+      border-top-right-radius: 0.25rem;
+      border-bottom-right-radius: 0.25rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: ${({theme}) => theme.colors.label};
+      border-radius: 1rem;
+      border: 3px solid ${({theme}) => theme.colors.containerBg};
+    }
   }
 
   html {

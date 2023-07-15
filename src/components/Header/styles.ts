@@ -69,6 +69,12 @@ export const HeaderContainer = styled.header`
     }
   }
 
+  .btn-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
   .nav-toggle {
     svg {
       font-size: 2rem;
@@ -89,7 +95,7 @@ export const HeaderContainer = styled.header`
     bottom: 0;
 
     nav {
-      height: 3rem;
+      height: 3.5rem;
 
       .nav-logo {
         a {

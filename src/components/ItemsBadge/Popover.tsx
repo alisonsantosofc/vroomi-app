@@ -12,7 +12,7 @@ interface PopoverProps {
 
 export function Popover({ children, title, isOpen, onClose, align }:PopoverProps) {
   return (
-    <StyledPopover hasTitle={title ? true : false} align={align} className={`${isOpen ? 'show' : ''}`}>
+    <StyledPopover hasTitle={title ? true : false} className={`${isOpen ? 'show' : ''}`}>
       <div className="arrow-container">
         <span className="arrow"></span>
       </div>
