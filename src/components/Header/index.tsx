@@ -6,9 +6,7 @@ import { ToggleDarkMode } from "../ToggleDarkMode";
 import { useDarkMode } from "../../hooks/useDarkMode";
 
 import { HeaderContainer } from "./styles";
-import { Button } from "../Button";
 import { ItemsBadge } from "../ItemsBadge";
-import { RentalsListPopover } from "@/views/Rent/RentalsList";
 
 export function Header() {
   const {darkMode, handleSetDarkMode} = useDarkMode();

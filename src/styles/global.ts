@@ -1,4 +1,7 @@
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
+import { Montserrat } from 'next/font/google';
+
+const montserrat = Montserrat({ subsets: ['latin'] });
 
 export const GlobalStyles = createGlobalStyle`
   /*=== CSS Variables ===*/
@@ -37,17 +40,16 @@ export const GlobalStyles = createGlobalStyle`
     scroll-behavior: smooth;
   }
 
-  body,
-  button,
-  input,
-  textarea {
-    font-family: var(--font-family);
-    font-size: 1.1rem;
-  }
-
   body {
     background-color: ${({theme}) => theme.colors.bodyBg};
     color: ${({theme}) => theme.colors.text};
+  }
+
+  // fixed font-family to nextjs 13 google fonts implementation
+  body.${montserrat.className} {
+    * {
+      font-family: inherit;
+    }
   }
 
   h1 {
@@ -213,4 +215,8 @@ export const GlobalStyles = createGlobalStyle`
       margin-right: 1rem;
     }
   }
+`;
+
+export const StyledAppContainer = styled.div`
+  
 `;

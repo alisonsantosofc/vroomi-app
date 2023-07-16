@@ -1,3 +1,5 @@
+'use client'
+
 import { Car } from "@/@types/Car";
 import { createContext, ReactNode, useContext, useState } from "react";
 
