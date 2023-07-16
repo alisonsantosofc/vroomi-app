@@ -9,6 +9,7 @@ import { formatAmount } from '@/utils/format';
 import { StyledRentCar } from './styles';
 import { useRentals } from '@/hooks/useRentals';
 import dayjs from 'dayjs';
+import { useRouter } from 'next/navigation';
 
 
 interface RentCarProps {
@@ -18,12 +19,14 @@ interface RentCarProps {
 
 export function RentCar({ car, onRequestClose }: RentCarProps) {
   const { createRental } = useRentals();
+  const router = useRouter();
 
   async function handleCreateRental() {
     const expectedReturnDate = dayjs().add(car.availability.maxDuration, "days").toDate();
     
     createRental(car, expectedReturnDate);
 
+    router.push('/fleet');
     onRequestClose();
   }
 
