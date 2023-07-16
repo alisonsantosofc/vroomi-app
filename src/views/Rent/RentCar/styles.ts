@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledRentCarModal = styled.div`
+export const StyledRentCar = styled.div`
   width: 676px;
   position: relative;
 

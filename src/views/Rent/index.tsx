@@ -6,13 +6,14 @@ import { Input } from '../../components/Input';
 import { Toast } from '../../components/Toast';
 import { Loader } from '../../components/Loader';
 import { Button } from '@/components/Button';
-import { RentCarModal } from './RentCarModal';
+import { RentCar } from './RentCar';
 import { CarCard } from './CarCard';
 
 import { Car } from '@/@types/Car';
 
 import { StyledRent } from './styles';
 import { useRentals } from '@/hooks/useRentals';
+import { useModal } from '@/hooks/useModal';
 
 interface RequestState {
   request: 'pending' | 'success' | 'failed';
@@ -20,6 +21,7 @@ interface RequestState {
 
 export function Rent() {
   const { rentals } = useRentals();
+  const { setModalContent } = useModal();
 
   const [cars, setCars] = useState<Car[]>([]);
   const [maxDuration, setMaxDuration] = useState(0);
@@ -72,8 +74,7 @@ export function Rent() {
   }
 
   function handleRentCar(car: Car) {
-    setCarSeletedToRent(car);
-    setIsOpenModal(true);
+    setModalContent(<RentCar car={car} onRequestClose={() => setModalContent(null)}/>)
   }
 
   function handlePressKey(e: KeyboardEvent) {
@@ -135,12 +136,6 @@ export function Rent() {
       {monitoringRequest.request === 'pending' && (
         <Loader isActive={monitoringRequest.request === 'pending' ? true : false} />
       )}
-
-      <RentCarModal
-        car={carSeletedToRent}
-        isOpen={isOpenModal}
-        onRequestClose={() => setIsOpenModal(!isOpenModal)}
-      />
     </StyledRent>
   );
 }

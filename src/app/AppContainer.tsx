@@ -1,4 +1,5 @@
 import { Header } from "@/components/Header";
+import { ModalProvider } from "@/hooks/useModal";
 import { StyledAppContainer } from "@/styles/global";
 import { ReactNode } from "react";
 
@@ -8,9 +9,11 @@ interface AppContainerProps {
 
 export function AppContainer({ children }: AppContainerProps) {
   return (
-    <StyledAppContainer className="container">
-      <Header />
-      {children}
-    </StyledAppContainer>
+    <ModalProvider>
+      <StyledAppContainer className="container">
+        <Header />
+        {children}
+      </StyledAppContainer>
+    </ModalProvider>
   )
 }
