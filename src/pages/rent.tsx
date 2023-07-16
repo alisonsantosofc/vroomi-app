@@ -6,7 +6,7 @@ export default function RentPage() {
   return (
     <>
       <Head>
-        <title>Vroomi | Alugar Carro</title>
+        <title>Vroomi | Frota</title>
       </Head>
       <Rent />
     </>

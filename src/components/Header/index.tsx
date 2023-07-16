@@ -89,16 +89,10 @@ export function Header() {
         </div>
 
         <div className="btn-container">
-          <ItemsBadge.Root>
-            <ItemsBadge.Trigger 
-              icon={<CarProfile />} 
-              setIsOpenPopover={() => setIsOpenPopover(!isOpenPopover)}
-            />
-
-            <ItemsBadge.Popover title="Carros alugados" onClose={() => setIsOpenPopover(false)} isOpen={isOpenPopover}>
-              <RentalsListPopover />
-            </ItemsBadge.Popover>
-          </ItemsBadge.Root>
+          <ItemsBadge 
+            icon={<CarProfile />}
+            href="/fleet"
+          />
 
           <div className="nav-toggle" onClick={() => setIsOpenMenu(!isOpenMenu)}>
             <SquaresFour />

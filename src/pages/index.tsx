@@ -10,7 +10,7 @@ export default function HomePage() {
   return (
     <>
       <Head>
-        <title>Vroomi - Home</title>
+        <title>Vroomi | Início</title>
       </Head>
       
       <Home />

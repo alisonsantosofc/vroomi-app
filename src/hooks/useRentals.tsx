@@ -6,9 +6,7 @@ interface RentalsProviderProps {
 }
 
 interface Rental {
-  carId: number, 
-  carModel: string,
-  carBrand: string,
+  car: Car,
   expectedReturnDate: Date,
 }
 
@@ -26,9 +24,7 @@ export function RentalsProvider({ children }: RentalsProviderProps) {
 
   function createRental(car: Car, expectedReturnDate: Date) {
     setRentals([...rentals, {
-      carId: car.id,
-      carModel: car.model,
-      carBrand: car.brand,
+      car: car,
       expectedReturnDate,
     }]);
   }

@@ -47,7 +47,7 @@ export function Rent() {
       const cars: Car[] = response.cars;
       
       cars.forEach((car) => {
-        const isRented = rentals.filter(rental => rental.carId === car.id);
+        const isRented = rentals.filter(rental => rental.car.id === car.id);
         const carIndex = cars.findIndex(carFind => carFind.id === car.id);
 
         if (isRented.length) {
@@ -81,10 +81,6 @@ export function Rent() {
       handleFindAvailableCars();
     }
   }
-
-  useEffect(() => {
-    handleFindAvailableCars();
-  }, [rentals.length]);
   
   return (
     <StyledRent className="rent-container container" >
