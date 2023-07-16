@@ -19,10 +19,6 @@ export const StyledRentalCard = styled.li<{disabled: boolean}>`
     left: -8rem;
   }
 
-  .rent-data-container {
-
-  }
-
   .brand-container {
     width: 100%;
     display: flex;
@@ -65,13 +61,35 @@ export const StyledRentalCard = styled.li<{disabled: boolean}>`
   }
 
   // Breakpoints
-  /* For medium devices */
-  @media screen and (max-width: 768px) {
-    margin-top: 6rem;
+  /* For large devices */
+  @media screen and (max-width: 998px) {
+    padding: 1rem 2rem 2rem 2rem;
+    margin-top: 4rem;
+
+    .rent-data-container {
+      width: 100%;
+    }
 
     img {
-      width: 25rem;
-      top: -6rem;
+      top: -25%;
+      left: 30%;
     }
+  }
+  /* For medium devices */
+  @media screen and (max-width: 768px) {
+    padding: 4rem 2rem 2rem 2rem;
+
+    img {
+      left: 20%;
+    }
+  }
+  @media screen and (max-width: 576px) {
+
+    img {
+      left: 10%;
+    }
+  }
+  /* For small devices */
+  @media screen and (max-width: 380px) {
   }
 `;
