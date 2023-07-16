@@ -1,16 +1,19 @@
 import { useRentals } from "@/hooks/useRentals";
 import { StyledRentalsList } from "./styles";
+import { RentalCard } from "../RentalCard";
 
 export function RentalsList() {
-  const { rentals } = useRentals();
+  const { rentals, finishRental } = useRentals();
   
   return (
-    <StyledRentalsList>
+    <StyledRentalsList className="grid">
       {rentals.map(rental => (
-        <div className="rental-card" key={rental.car.id}>
-          <strong>{rental.car.model}</strong>
-          <span>retornar em {rental.expectedReturnDate.toLocaleDateString("pt-BR")}</span>
-        </div>
+        <RentalCard 
+          car={rental.car} 
+          handleFinishRental={finishRental}
+          expectedReturnDate={rental.expectedReturnDate} 
+          key={rental.car.id}
+        />
       ))}
     </StyledRentalsList>
   )

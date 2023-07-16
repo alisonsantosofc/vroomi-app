@@ -24,7 +24,7 @@ export function About() {
       <h2 className="section-title">Quem somos</h2>
       <span className="section-subtitle">Fornecendo a melhor experiência</span>
 
-      <div className="about-container container">
+      <div className="about-container">
         <div className="about-info">
           <AboutInfo />
 

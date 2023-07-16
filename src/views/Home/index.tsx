@@ -23,7 +23,7 @@ export function Home() {
   };
 
   return (
-    <StyledHome className="container">
+    <StyledHome>
       <Highlight />
       <About />
       <Fleet />

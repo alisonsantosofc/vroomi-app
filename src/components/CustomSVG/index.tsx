@@ -19,7 +19,47 @@ export interface SVGComponentProps {
   color?: string;
 }
 
-export const CustomSVG = {
+export function getCarBrandSVG(carBrand: string, colors: any, darkMode: boolean) {
+  switch (carBrand) {
+    case 'Chevrolet':
+      return (<Chevrolet color={!darkMode ? colors.title : colors.title} />);
+    case 'Fiat':
+      return (<Fiat color={!darkMode ? colors.title : colors.title} />);
+    case 'Citroen':
+      return (<Citroen color={!darkMode ? colors.title : colors.title} />);
+    case 'Ford':
+      return (<Ford color={!darkMode ? colors.title : colors.title} />);
+    case 'Chrysler':
+      return (<Chrysler color={!darkMode ? colors.title : colors.title} />);
+    case 'Honda':
+      return (<Honda color={!darkMode ? colors.title : colors.title} />);
+    case 'Kia Motors':
+      return (<Kia color={!darkMode ? colors.title : colors.title} />);
+    case 'Hyundai':
+      return (<Hyundai color={!darkMode ? colors.title : colors.title} />);
+    case 'Lexus':
+      return (<Lexus color={!darkMode ? colors.title : colors.title} />);
+    case 'Nissan':
+      return (<Nissan color={!darkMode ? colors.title : colors.title} />);
+    case 'Peugeot':
+      return (<Peugeot color={!darkMode ? colors.title : colors.title} />);
+    case 'Renault':
+      return (<Renault color={!darkMode ? colors.title : colors.title} />);
+    case 'Suzuki':
+      return (<Suzuki color={!darkMode ? colors.title : colors.title} />);
+    case 'Tesla':
+      return (<Tesla color={!darkMode ? colors.title : colors.title} />);
+    case 'Toyota':
+      return (<Toyota color={!darkMode ? colors.title : colors.title} />);
+    case 'Volkswagen':
+      return (<Volkswagen color={!darkMode ? colors.title : colors.title} />);
+  
+    default:
+      return null;
+  }
+}
+
+export const CarBrandSVG = {
   Chevrolet: Chevrolet,
   Chrysler: Chrysler,
   Citroen: Citroen,

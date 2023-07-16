@@ -19,7 +19,7 @@ export function Highlight() {
   };
 
   return (
-    <StyledHighlight className="container" id="home">
+    <StyledHighlight id="home">
       <section className="dashboard-section section">
         <div className="dashboard-slogan">
           <h1>Alugue carros de uma forma prática e rápida</h1>

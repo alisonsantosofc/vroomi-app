@@ -83,7 +83,7 @@ export function Rent() {
   }
   
   return (
-    <StyledRent className="rent-container container" >
+    <StyledRent className="rent-container" >
       <div className="rent-find">
         <h2>Encontre um carro para alugar</h2>
 

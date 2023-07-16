@@ -1,65 +1,66 @@
-import { CustomSVG } from "@/components/CustomSVG";
+import { CarBrandSVG } from "@/components/CustomSVG";
 
 import { StyledFleet } from "./styles";
 import { useDarkMode } from "@/hooks/useDarkMode";
-import { darkTheme, lightTheme } from "@/styles/themes";
+import { useTheme } from "styled-components";
 
 export function Fleet() {
   const { darkMode } = useDarkMode();
+  const { colors } = useTheme();
 
   return (
     <StyledFleet className="section" id="fleet">
       <h2 className="section-title">Frota de veículos</h2>
       <span className="section-subtitle">Trabalhamos com as melhores marcas</span>
 
-      <div className="fleet-container container grid">
+      <div className="fleet-container grid">
         <div className="brand-card">
-          <CustomSVG.Chevrolet color={!darkMode ? lightTheme.colors.title : darkTheme.colors.title} />
+          <CarBrandSVG.Chevrolet color={!darkMode ? colors.title : colors.title} />
         </div>
         <div className="brand-card">
-          <CustomSVG.Fiat color={!darkMode ? lightTheme.colors.title : darkTheme.colors.title} />
+          <CarBrandSVG.Fiat color={!darkMode ? colors.title : colors.title} />
         </div>
         <div className="brand-card">
-          <CustomSVG.Citroen color={!darkMode ? lightTheme.colors.title : darkTheme.colors.title} />
+          <CarBrandSVG.Citroen color={!darkMode ? colors.title : colors.title} />
         </div>
         <div className="brand-card">
-          <CustomSVG.Ford color={!darkMode ? lightTheme.colors.title : darkTheme.colors.title} />
+          <CarBrandSVG.Ford color={!darkMode ? colors.title : colors.title} />
         </div>
         <div className="brand-card">
-          <CustomSVG.Chrysler color={!darkMode ? lightTheme.colors.title : darkTheme.colors.title} />
+          <CarBrandSVG.Chrysler color={!darkMode ? colors.title : colors.title} />
         </div>
         <div className="brand-card">
-          <CustomSVG.Honda color={!darkMode ? lightTheme.colors.title : darkTheme.colors.title} />
+          <CarBrandSVG.Honda color={!darkMode ? colors.title : colors.title} />
         </div>
         <div className="brand-card">
-          <CustomSVG.Kia color={!darkMode ? lightTheme.colors.title : darkTheme.colors.title} />
+          <CarBrandSVG.Kia color={!darkMode ? colors.title : colors.title} />
         </div>
         <div className="brand-card">
-          <CustomSVG.Hyundai color={!darkMode ? lightTheme.colors.title : darkTheme.colors.title} />
+          <CarBrandSVG.Hyundai color={!darkMode ? colors.title : colors.title} />
         </div>
         <div className="brand-card">
-          <CustomSVG.Lexus color={!darkMode ? lightTheme.colors.title : darkTheme.colors.title} />
+          <CarBrandSVG.Lexus color={!darkMode ? colors.title : colors.title} />
         </div>
         <div className="brand-card">
-          <CustomSVG.Nissan color={!darkMode ? lightTheme.colors.title : darkTheme.colors.title} />
+          <CarBrandSVG.Nissan color={!darkMode ? colors.title : colors.title} />
         </div>
         <div className="brand-card">
-          <CustomSVG.Peugeot color={!darkMode ? lightTheme.colors.title : darkTheme.colors.title} />
+          <CarBrandSVG.Peugeot color={!darkMode ? colors.title : colors.title} />
         </div>
         <div className="brand-card">
-          <CustomSVG.Renault color={!darkMode ? lightTheme.colors.title : darkTheme.colors.title} />
+          <CarBrandSVG.Renault color={!darkMode ? colors.title : colors.title} />
         </div>
         <div className="brand-card">
-          <CustomSVG.Suzuki color={!darkMode ? lightTheme.colors.title : darkTheme.colors.title} />
+          <CarBrandSVG.Suzuki color={!darkMode ? colors.title : colors.title} />
         </div>
         <div className="brand-card">
-          <CustomSVG.Tesla color={!darkMode ? lightTheme.colors.title : darkTheme.colors.title} />
+          <CarBrandSVG.Tesla color={!darkMode ? colors.title : colors.title} />
         </div>
         <div className="brand-card">
-          <CustomSVG.Toyota color={!darkMode ? lightTheme.colors.title : darkTheme.colors.title} />
+          <CarBrandSVG.Toyota color={!darkMode ? colors.title : colors.title} />
         </div>
         <div className="brand-card">
-          <CustomSVG.Volkswagen color={!darkMode ? lightTheme.colors.title : darkTheme.colors.title} />
+          <CarBrandSVG.Volkswagen color={!darkMode ? colors.title : colors.title} />
         </div>
       </div>
     </StyledFleet>

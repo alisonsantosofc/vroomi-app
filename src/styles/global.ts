@@ -218,5 +218,16 @@ export const GlobalStyles = createGlobalStyle`
 `;
 
 export const StyledAppContainer = styled.div`
-  
+  // Breakpoints
+  /* For large devices */
+  @media screen and (max-width: 998px) {
+  }
+  /* For medium devices */
+  @media screen and (max-width: 768px) {
+  }
+  @media screen and (max-width: 576px) {
+  }
+  /* For small devices */
+  @media screen and (max-width: 380px) {
+  }
 `;

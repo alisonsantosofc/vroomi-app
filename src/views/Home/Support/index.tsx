@@ -12,7 +12,7 @@ export function Support() {
       <h2 className="section-title">Suporte 24h</h2>
       <span className="section-subtitle">Nossa equipe sempre disponível</span>
 
-      <div className="support-container container">
+      <div className="support-container">
         <form>
           <div className="user-data">
             <Input placeholder="Nome" />

@@ -2,8 +2,6 @@ import styled from "styled-components";
 
 export const StyledItemsBadge = styled.a`
   position: relative;
-  background-color: ${({theme}) => theme.colors.containerBg};
-  padding: 0.5rem;
   border-radius: 100%;
   width: 32px;
   height: 32px;
@@ -11,11 +9,10 @@ export const StyledItemsBadge = styled.a`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: ${({theme}) => theme.effects.shadowAround};
   cursor: pointer;
 
   svg {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   .badge {
@@ -27,8 +24,8 @@ export const StyledItemsBadge = styled.a`
     right: -0.5rem;
     border-radius: 100%;
     background: ${({theme}) => theme.colors.red500};
-    width: 1.45rem;
-    height: 1.45rem;
+    width: 1.25rem;
+    height: 1.25rem;
     font-size: 0.75rem;
     color: ${({theme}) => theme.colors.white};
     opacity: 0;
@@ -42,10 +39,6 @@ export const StyledItemsBadge = styled.a`
   /*=== Breakpoints ===*/
   /* For medium devices */
   @media screen and (max-width: 768px) {
-    width: 26px;
-    height: 26px;
-    padding: 0.3rem;
-
     .badge {
       font-size: 0.6rem;
       width: 1rem;

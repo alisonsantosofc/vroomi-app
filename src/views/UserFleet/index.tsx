@@ -3,7 +3,7 @@ import { StyledUserFleet } from './styles';
 
 export function UserFleet() {
   return (
-    <StyledUserFleet className="user-fleet-container container" >
+    <StyledUserFleet className="user-fleet-container section" >
       <RentalsList />
     </StyledUserFleet>
   );
