@@ -12,7 +12,7 @@ interface CarsContextData {
   likedCars: Car[];
   setCars: Dispatch<SetStateAction<Car[]>>;
   handleSetCars: (responseCars: Car[]) => void;
-  handleLikedCar: (car: Car, rentals: any[], setRentals: any) => void;
+  handleLikedCar: (car: Car) => void;
   setLikedCars: Dispatch<SetStateAction<Car[]>>;
 }
 
@@ -42,7 +42,7 @@ export function CarsProvider({ children }: CarsProviderProps) {
     }
   }
 
-  function handleLikedCar(car: Car, rentals: any[], setRentals: any) {
+  function handleLikedCar(car: Car) {
     const carsFindIndex = cars.findIndex(findCar => findCar.id === car.id);
 
     const carsUpdated = [...cars];
