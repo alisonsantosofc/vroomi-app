@@ -32,10 +32,9 @@ export function Highlight() {
         </div>
 
         <div className="btn-container">
-          <Button onClick={(e) => handleClick(e)}>
+          <Button typed="main" onClick={(e) => handleClick(e)}>
             Alugar um carro agora
           </Button>
-          <Button>Assinar Renter Club</Button>
         </div>
 
         <div className="dashboard-info">

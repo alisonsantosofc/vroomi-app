@@ -15,6 +15,7 @@ export const StyledFooter = styled.footer`
     }
 
     .footer-link {
+      font-size: 0.9rem;
       color: ${({theme}) => theme.colors.title};
 
       &:hover {
@@ -68,6 +69,12 @@ export const StyledFooter = styled.footer`
       p {
         text-align: center;
         font-size: 0.9rem;
+      }
+
+      .footer-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
       }
     }
   }

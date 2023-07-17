@@ -7,7 +7,7 @@ export const StyledHighlight = styled.section`
   margin-bottom: 4rem;
 
   .dashboard-section {
-    margin-top: 2rem;
+    margin-top: 3rem;
     
     .dashboard-slogan {
       display: flex;
@@ -35,28 +35,6 @@ export const StyledHighlight = styled.section`
   .btn-container {
     display: flex;
     margin-top: 2rem;
-    
-    button {
-      height: 3rem;
-      font-size: 1rem;
-
-      &:first-child {
-        background: ${({theme}) => theme.colors.main500};
-        margin-right: 1rem;
-
-        &:hover {
-          background: ${({theme}) => theme.effects.hoverLight(theme.colors.main500)};
-        }
-      }
-
-      &:last-child {
-        background: ${({theme}) => theme.colors.title};
-
-        &:hover {
-          background: ${({theme}) => theme.effects.hoverLight(theme.colors.title)};
-        }
-      }
-    }
   }
 
   .dashboard-info {
@@ -109,7 +87,7 @@ export const StyledHighlight = styled.section`
   /* For medium devices */
   @media screen and (max-width: 768px) {
     .dashboard-section {
-      margin-top: 0;
+      margin-top: 8rem;
 
       .dashboard-slogan {
         h1 {

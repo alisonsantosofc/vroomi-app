@@ -6,10 +6,40 @@ export const HeaderContainer = styled.header`
   top: 0;
   left: 0;
   z-index: 10;
-  background-color: ${({theme}) => theme.colors.bodyBg};
 
   &.scroll-header {
     box-shadow: ${({theme}) => theme.effects.shadowBottom};
+    background-color: ${({theme}) => theme.colors.bodyBg};
+
+    .nav-logo {
+      a {
+        color: ${({theme}) => theme.colors.text};
+      }
+    }
+
+    .nav-menu {
+      ul {
+        .nav-link {
+          color: ${({theme}) => theme.colors.text};
+
+          &.active {
+            color: ${({theme}) => theme.colors.title};
+          }
+        }
+      }
+    }
+
+    .btn-container {
+      a {
+        svg {
+          color: ${({theme}) => theme.colors.text};
+        }
+
+        .badge {
+          background:  ${({theme}) => theme.colors.red500};
+        }
+      }
+    }
   }
 
   nav {
@@ -27,6 +57,7 @@ export const HeaderContainer = styled.header`
         font-weight: 700;
         margin-right: 0.5rem;
         letter-spacing: 1px;
+        color: ${({theme}) => theme.colors.white};
       }
     }
 
@@ -48,17 +79,13 @@ export const HeaderContainer = styled.header`
           justify-content: center;
           align-items: center;
           font-size: 0.9rem;
-          color: ${({theme}) => theme.colors.text};
+          color: ${({theme}) => theme.colors.white};
           font-weight: 500;
           transition: .3s; 
           height: 100%;
-          
-          &:hover {
-            color: ${({theme}) => theme.effects.hoverLight(theme.colors.title)};
-          }
 
           &.active {
-            color: ${({theme}) => theme.colors.title};
+            color: ${({theme}) => theme.effects.hoverLight(theme.colors.white)};
           }
 
           svg {
@@ -73,6 +100,16 @@ export const HeaderContainer = styled.header`
     display: flex;
     align-items: center;
     gap: 1rem;
+
+    a {
+      svg {
+        color: ${({theme}) => theme.colors.white};
+      }
+
+      .badge {
+        background:  ${({theme}) => theme.colors.black};
+      }
+    }
   }
 
   .nav-toggle {
@@ -91,8 +128,74 @@ export const HeaderContainer = styled.header`
   /*=== Breakpoints ===*/
   /* For medium devices */
   @media screen and (max-width: 768px) {
+    background-color: ${({theme}) => theme.colors.bodyBg};
     top: initial;
     bottom: 0;
+
+    &.scroll-header {
+      .nav-logo {
+        a {
+          color: ${({theme}) => theme.colors.text};
+        }
+      }
+
+      .nav-menu {
+        ul {
+          .nav-link {
+            color: ${({theme}) => theme.colors.text};
+
+            &.active {
+              color: ${({theme}) => theme.colors.main500};
+            }
+          }
+        }
+      }
+
+      .btn-container {
+        a {
+          svg {
+            color: ${({theme}) => theme.colors.text};
+          }
+
+          .badge {
+            background:  ${({theme}) => theme.colors.red500};
+          }
+        }
+      }
+    }
+
+    nav {
+      .nav-logo {
+        a {
+          color: ${({theme}) => theme.colors.text};
+        }
+      }
+    }
+
+    .nav-menu {
+      ul {
+        .nav-link {
+          color: ${({theme}) => theme.colors.text};
+
+          &.active {
+            color: ${({theme}) => theme.colors.title};
+          }
+        }
+      }
+    }
+
+    .btn-container {
+      a {
+        svg {
+          color: ${({theme}) => theme.colors.text};
+        }
+
+        .badge {
+          background:  ${({theme}) => theme.colors.red500};
+        }
+      }
+    }
+    
 
     nav {
       height: 3.5rem;

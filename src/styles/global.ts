@@ -218,6 +218,15 @@ export const GlobalStyles = createGlobalStyle`
 `;
 
 export const StyledAppContainer = styled.div`
+  position: relative;
+
+  .bg-svg {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
   // Breakpoints
   /* For large devices */
   @media screen and (max-width: 998px) {

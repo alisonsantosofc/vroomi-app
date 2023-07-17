@@ -1,8 +1,10 @@
+import { ReactNode } from "react";
+
+import { BgSVG } from "@/components/CustomSVG";
 import { Header } from "@/components/Header";
 import { ModalProvider } from "@/hooks/useModal";
 import { StyledAppContainer } from "@/styles/global";
 import { Footer } from "@/views/Footer";
-import { ReactNode } from "react";
 
 interface AppContainerProps {
   children: ReactNode;
@@ -17,6 +19,8 @@ export function AppContainer({ children }: AppContainerProps) {
           {children}
         </main>
         <Footer />
+
+        <BgSVG.LinesBg className="bg-svg" />
       </StyledAppContainer>
     </ModalProvider>
   )

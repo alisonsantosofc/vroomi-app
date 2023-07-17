@@ -1,3 +1,4 @@
+import { SVGProps } from "react";
 import { Chevrolet } from "./CarBrandSVG/Chevrolet";
 import { Chrysler } from "./CarBrandSVG/Chrysler";
 import { Citroen } from "./CarBrandSVG/Citroen";
@@ -14,8 +15,9 @@ import { Suzuki } from "./CarBrandSVG/Suzuki";
 import { Tesla } from "./CarBrandSVG/Tesla";
 import { Toyota } from "./CarBrandSVG/Toyota";
 import { Volkswagen } from "./CarBrandSVG/Volkswagen";
+import { LinesBg } from "./LinesBgSVG/LinesBg";
 
-export interface SVGComponentProps {
+export interface SVGComponentProps extends SVGProps<SVGSVGElement> {
   color?: string;
 }
 
@@ -76,4 +78,8 @@ export const CarBrandSVG = {
   Tesla: Tesla,
   Toyota: Toyota,
   Volkswagen: Volkswagen,
+}
+
+export const BgSVG = {
+  LinesBg: LinesBg,
 }

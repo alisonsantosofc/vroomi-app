@@ -11,28 +11,39 @@ export const StyledAbout = styled.section`
 
     .about-info {
       .info-container {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
         margin-bottom: 2rem;
 
         .about-box {
           background-color: ${({theme}) => theme.colors.containerBg};
           box-shadow: ${({theme}) => theme.effects.shadowAround};
-          border-radius: 0.75rem;
+          border-radius: 0.25rem;
           text-align: center;
-          padding: 1rem 1.25rem;
+          padding: 2rem 1.25rem;
+          display: flex;
+          gap: 1rem;
 
           svg {
-            font-size: 2.5rem;
-            color: ${({theme}) => theme.effects.hoverLight(theme.colors.main500)};
+            font-size: 4rem;
+            color: ${({theme}) => theme.colors.main500};
           }
 
           div {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            h3 {
+              font-size: 2.2rem;
+            }
+
             p {
+              text-align: left;
               font-size: 0.9rem;
 
               span {
-                color: ${({theme}) => theme.effects.hoverLight(theme.colors.main500)};
+                color: ${({theme}) => theme.colors.title};
                 font-size: 1rem;
                 font-weight: 500;
               }

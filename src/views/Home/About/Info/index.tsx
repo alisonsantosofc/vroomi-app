@@ -4,14 +4,6 @@ export function AboutInfo() {
   return (
     <div className="info-container grid">
       <div className="about-box">
-        <Medal />
-        <div>
-          <h3>Conforto</h3>
-          <p>garantido ou seu <span>dinheiro</span> de volta</p>
-        </div>
-      </div>
-
-      <div className="about-box">
         <ShieldCheck />
         <div>
           <h3>Seguro</h3>
