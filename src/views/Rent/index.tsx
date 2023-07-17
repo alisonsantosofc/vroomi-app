@@ -6,7 +6,7 @@ import { Input } from '../../components/Input';
 import { Toast } from '../../components/Toast';
 import { Loader } from '../../components/Loader';
 import { Button } from '@/components/Button';
-import { RentCar } from './RentCar';
+import { RentCar } from '@/components/App/RentCar';
 import { CarCard } from './CarCard';
 
 import { Car } from '@/@types/Car';
@@ -15,6 +15,7 @@ import { useModal } from '@/hooks/useModal';
 import { useCars } from '@/hooks/useCars';
 
 import { StyledRent } from './styles';
+
 interface RequestState {
   request: 'pending' | 'success' | 'failed';
 }

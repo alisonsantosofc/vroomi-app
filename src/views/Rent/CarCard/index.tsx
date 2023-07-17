@@ -18,7 +18,7 @@ export function CarCard({car, handleRentCar}: CarCardProps) {
   const { handleLikedCar } = useCars();
 
   return (
-    <StyledCarCard disabled={car.available ? false : true}>
+    <StyledCarCard>
       <Image
         src={require(`../../../../public/cars/${car.id}.png`)}
         alt={car.model}
@@ -38,7 +38,7 @@ export function CarCard({car, handleRentCar}: CarCardProps) {
 
       <div className="info-container">
         <p>
-          Preço por dia:{' '}
+          {'a partir de'}
           <span>
             {formatAmount({
               amount: car.pricePerDay,
@@ -47,21 +47,10 @@ export function CarCard({car, handleRentCar}: CarCardProps) {
             })}
           </span>
         </p>
-
-        <p>
-          Preço por km:{' '}
-          <span>
-            {formatAmount({
-              amount: car.pricePerKm,
-              currency: 'BRL',
-              lang: 'pt-br',
-            })}
-          </span>
-        </p>
       </div>
 
       <div className="btn-container">
-        <Button typed="main" size="large" onClick={() => handleRentCar(car)}>Alugar</Button>
+        <Button typed="main" size="large" onClick={() => handleRentCar(car)}>Continuar</Button>
       </div>
     </StyledCarCard>
   );

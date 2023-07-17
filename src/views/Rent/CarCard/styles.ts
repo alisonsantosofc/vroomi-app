@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledCarCard = styled.li<{disabled: boolean}>`
+export const StyledCarCard = styled.li`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -12,7 +12,6 @@ export const StyledCarCard = styled.li<{disabled: boolean}>`
   box-shadow: ${({theme}) => theme.effects.shadowAround};
   margin-top: 4rem;
   transition: .3s;
-  opacity: ${({disabled}) => disabled && '0.5'};
 
   img {
     position: absolute;
@@ -68,9 +67,15 @@ export const StyledCarCard = styled.li<{disabled: boolean}>`
     gap: 0.25rem;
 
     p {
-      font-size: 0.9rem;
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      font-size: 0.7rem;
+
       span {
-        font-weight: 600;
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: ${({theme}) => theme.colors.title};
       }
     }
   }

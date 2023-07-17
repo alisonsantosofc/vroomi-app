@@ -1,12 +1,13 @@
-import { RentCar } from './RentCar';
+
 import { CarCard } from './CarCard';
+import AppLink from '@/components/AppLink';
+import { RentCar } from '@/components/App/RentCar';
 
 import { Car } from '@/@types/Car';
 import { useModal } from '@/hooks/useModal';
 import { useCars } from '@/hooks/useCars';
 
 import { StyledFavs } from './styles';
-import AppLink from '@/components/AppLink';
 
 export function Favs() {
   const { likedCars } = useCars();
