@@ -218,13 +218,13 @@ export const GlobalStyles = createGlobalStyle`
 `;
 
 export const StyledAppContainer = styled.div`
+  overflow-x: hidden;
 
   .bg-svg {
     z-index: -1;
     position: absolute;
     top: 0;
     left: 0;
-    max-width: 100%;
   }
 
   // Breakpoints
