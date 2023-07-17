@@ -2,7 +2,7 @@
 
 import { Rentals } from "@/views/Rentals";
 
-export default function FleetPage() {
+export default function RentalsPage() {
   return (
     <Rentals />
   )

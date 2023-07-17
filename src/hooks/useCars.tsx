@@ -94,7 +94,11 @@ export function CarsProvider({ children }: CarsProviderProps) {
       'cars',
       JSON.stringify(cars)
     );
-  }, [cars])
+  }, [cars]);
+
+  useEffect(() => {
+    likedCars
+  }, [likedCars]);
 
   return (
     <CarsContext.Provider value={{ cars, likedCars, handleLikedCar, handleSetCars, setCars, setLikedCars }}>

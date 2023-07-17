@@ -2,7 +2,7 @@
 
 import { Rent } from "@/views/Rent";
 
-export default function HomePage() {
+export default function RentPage() {
   return (
     <Rent />
   )
