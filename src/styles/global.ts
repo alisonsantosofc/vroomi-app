@@ -235,6 +235,14 @@ export const StyledAppContainer = styled.div`
   }
   /* For medium devices */
   @media screen and (max-width: 768px) {
+    .bg-svg {
+      z-index: -1;
+      position: absolute;
+      top: -2rem;
+      left: 0;
+      overflow: hidden;
+      max-width: 100%;
+    }
   }
   @media screen and (max-width: 576px) {
   }

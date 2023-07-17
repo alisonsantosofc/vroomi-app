@@ -87,7 +87,7 @@ export const StyledHighlight = styled.section`
   /* For medium devices */
   @media screen and (max-width: 768px) {
     .dashboard-section {
-      margin-top: 8rem;
+      margin-top: 6rem;
 
       .dashboard-slogan {
         h1 {

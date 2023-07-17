@@ -21,8 +21,8 @@ export function AppContainer({ children }: AppContainerProps) {
         <Footer />
 
         <div className="bg-svg">
-          <BgSVG.LinesBg />
-        <div/>
+        <BgSVG.LinesBg />
+        </div>
       </StyledAppContainer>
     </ModalProvider>
   )

@@ -107,7 +107,7 @@ export const StyledRent = styled.main`
 
     .rent-find {
       h2 {
-        color: ${({theme}) => theme.colors.white};
+        font-size: 1.75rem;
       }
 
       .form-content {

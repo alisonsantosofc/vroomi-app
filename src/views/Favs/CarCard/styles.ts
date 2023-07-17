@@ -58,22 +58,6 @@ export const StyledCarCard = styled.li`
     }
   }
 
-  .info-container {
-    margin: 1rem 0;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 0.25rem;
-
-    p {
-      font-size: 0.9rem;
-      span {
-        font-weight: 600;
-      }
-    }
-  }
-
   .btn-container {
     margin: 1rem;
     width: 100%;
