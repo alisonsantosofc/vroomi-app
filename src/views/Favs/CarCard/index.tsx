@@ -34,7 +34,7 @@ export function CarCard({car, handleRentCar}: CarCardProps) {
           <span>{car.brand}</span>
         </p>
 
-        <LikeButton liked={car.like} handleLiked={() => handleLikedCar(car, rentals, setRentals)}  />
+        <LikeButton liked={car.like} handleLiked={() => handleLikedCar(car)}  />
         <span>{`até ${car.availability.maxDistance} km`}</span>
       </div>
 
