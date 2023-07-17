@@ -8,6 +8,7 @@ import { formatAmount } from '@/utils/format';
 import { useCars } from '@/hooks/useCars';
 
 import { StyledCarCard } from './styles';
+import { useRentals } from '@/hooks/useRentals';
 
 interface CarCardProps {
   car: Car;
@@ -16,6 +17,7 @@ interface CarCardProps {
 
 export function CarCard({car, handleRentCar}: CarCardProps) {
   const { handleLikedCar } = useCars();
+  const { rentals, setRentals } = useRentals();
 
   return (
     <StyledCarCard disabled={car.available ? false : true}>
@@ -32,7 +34,7 @@ export function CarCard({car, handleRentCar}: CarCardProps) {
           <span>{car.brand}</span>
         </p>
 
-        <LikeButton liked={car.like} handleLiked={() => handleLikedCar(car)}  />
+        <LikeButton liked={car.like} handleLiked={() => handleLikedCar(car, rentals, setRentals)}  />
         <span>{`até ${car.availability.maxDistance} km`}</span>
       </div>
 

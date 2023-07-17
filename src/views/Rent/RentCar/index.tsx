@@ -31,7 +31,7 @@ export function RentCar({ car, onRequestClose }: RentCarProps) {
     
     createRental(car, expectedReturnDate);
 
-    router.push('/fleet');
+    // router.push('/rentals');
     onRequestClose();
   }
 

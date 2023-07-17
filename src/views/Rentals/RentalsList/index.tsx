@@ -1,6 +1,6 @@
 import { useRentals } from "@/hooks/useRentals";
 import { StyledRentalsList } from "./styles";
-import { RentalCard } from "../RentalCard";
+import { CarCard } from "../CarCard";
 
 export function RentalsList() {
   const { rentals, finishRental } = useRentals();
@@ -8,7 +8,7 @@ export function RentalsList() {
   return (
     <StyledRentalsList className="grid">
       {rentals.map(rental => (
-        <RentalCard 
+        <CarCard 
           car={rental.car} 
           handleFinishRental={finishRental}
           expectedReturnDate={rental.expectedReturnDate} 

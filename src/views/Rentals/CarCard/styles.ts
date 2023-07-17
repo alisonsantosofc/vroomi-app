@@ -27,7 +27,7 @@ export const StyledRentalCard = styled.li`
     justify-content: space-between;
     align-items: center;
     color: ${({theme}) => theme.colors.title};
-    padding-right: 4rem;
+    padding-right: 3rem;
 
     p {
       display: flex;
@@ -88,13 +88,40 @@ export const StyledRentalCard = styled.li`
       top: -7rem;
       left: inherit;
     }
+
+    .brand-container {
+      i {
+        top: 4rem;
+      }
+    }
   }
   /* For medium devices */
   @media screen and (max-width: 768px) {
     padding: 4rem 2rem 2rem 2rem;
+
+    .brand-container {
+      padding-right: 2.5rem;
+
+      i {
+        top: 5rem;
+      }
+    }
+
+    .info-container {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
   }
   @media screen and (max-width: 576px) {
     .brand-container {
+      padding-right: 2rem;
+
       p {
         strong {
           font-size: 2rem;
@@ -103,6 +130,11 @@ export const StyledRentalCard = styled.li`
 
       svg {
         width: 3rem;
+      }
+
+      i {
+        top: 5.5rem;
+        font-size: 1.5rem;
       }
     }
   }

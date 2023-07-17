@@ -18,7 +18,7 @@ interface CarCardProps {
   handleFinishRental: (carId: number, expectedReturnDate: Date) => void;
 }
 
-export function RentalCard({car, expectedReturnDate, handleFinishRental}: CarCardProps) {
+export function CarCard({car, expectedReturnDate, handleFinishRental}: CarCardProps) {
   const { darkMode } = useDarkMode();
   const { colors } = useTheme();
   const { handleLikedCar } = useCars();

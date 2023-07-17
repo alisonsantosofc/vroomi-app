@@ -12,7 +12,7 @@ interface CarsContextData {
   likedCars: Car[];
   setCars: Dispatch<SetStateAction<Car[]>>;
   handleSetCars: (responseCars: Car[]) => void;
-  handleLikedCar: (car: Car) => void;
+  handleLikedCar: (car: Car, rentals: any[], setRentals: any) => void;
   setLikedCars: Dispatch<SetStateAction<Car[]>>;
 }
 
@@ -42,12 +42,12 @@ export function CarsProvider({ children }: CarsProviderProps) {
     }
   }
 
-  function handleLikedCar(car: Car) {
-    const findIndex = cars.findIndex(findCar => findCar.id === car.id);
+  function handleLikedCar(car: Car, rentals: any[], setRentals: any) {
+    const carsFindIndex = cars.findIndex(findCar => findCar.id === car.id);
 
     const carsUpdated = [...cars];
 
-    carsUpdated[findIndex].like = !car.like;
+    carsUpdated[carsFindIndex].like = !car.like;
 
     setCars(carsUpdated);
 
@@ -58,7 +58,7 @@ export function CarsProvider({ children }: CarsProviderProps) {
     if (alreadyLiked?.length > 0) {
       likedCarsUpdated = likedCars.filter(carFilter => carFilter.id !== car.id);
     } else {
-      likedCarsUpdated.push(carsUpdated[findIndex]);
+      likedCarsUpdated.push(carsUpdated[carsFindIndex]);
     }
 
     setLikedCars(likedCarsUpdated);

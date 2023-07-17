@@ -89,7 +89,7 @@ export function Header() {
         <div className="btn-container">
           <ItemsBadge 
             icon={<CarProfile />}
-            href="/fleet"
+            href="/rentals"
           />
 
           <div className="nav-toggle" onClick={() => setIsOpenMenu(!isOpenMenu)}>

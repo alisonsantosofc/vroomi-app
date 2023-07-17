@@ -1,9 +1,9 @@
 "use client";
 
-import { UserFleet } from "@/views/UserFleet";
+import { Rentals } from "@/views/Rentals";
 
 export default function FleetPage() {
   return (
-    <UserFleet />
+    <Rentals />
   )
 }

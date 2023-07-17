@@ -1,7 +1,7 @@
 'use client'
 
 import { Car } from "@/@types/Car";
-import { createContext, ReactNode, useContext, useEffect, useState } from "react";
+import { createContext, Dispatch, ReactNode, SetStateAction, useContext, useEffect, useState } from "react";
 import { useCars } from "./useCars";
 
 interface RentalsProviderProps {
@@ -15,6 +15,7 @@ interface Rental {
 
 interface RentalsContextData {
   rentals: Rental[];
+  setRentals: Dispatch<SetStateAction<Rental[]>>
   createRental: (car: Car, expectedReturnDate: Date) => void;
   finishRental: (carId: number, expectedReturnDate: Date) => void;
 }
@@ -102,7 +103,7 @@ export function RentalsProvider({ children }: RentalsProviderProps) {
   }, [likedCars]);
 
   return (
-    <RentalsContext.Provider value={{ rentals, createRental, finishRental }}>
+    <RentalsContext.Provider value={{ rentals, createRental, finishRental, setRentals }}>
       {children}
     </RentalsContext.Provider>
   )
