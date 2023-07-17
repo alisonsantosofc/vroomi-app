@@ -17,7 +17,7 @@ export function Favs() {
   }
   
   return (
-    <StyledFavs className="section">
+    <StyledFavs>
       <div className="title-content">
         <h2>Seus carros favoritos</h2>
 

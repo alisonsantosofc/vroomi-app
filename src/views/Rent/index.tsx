@@ -88,14 +88,14 @@ export function Rent() {
         <div className="form-content">
           <form>
             <Input 
-              label="dias (permanência)"
+              placeholder="dias (permanência)"
               type="number"
               onKeyDown={(e) => handlePressKey(e)}
               onChange={(e) => setMaxDuration(Number(e.target.value))}
             />
 
             <Input
-              label="distância (km)"
+              placeholder="distância (km)"
               type="number"
               onKeyDown={(e) => handlePressKey(e)}
               onChange={(e) => setMaxDistance(Number(e.target.value))}

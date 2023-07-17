@@ -4,7 +4,7 @@ import { StyledUserFleet } from './styles';
 
 export function Rentals() {
   return (
-    <StyledUserFleet className="user-fleet-container section" >
+    <StyledUserFleet className="user-fleet-container" >
       <div className="title-content">
         <h2>Sua frota de veículos</h2>
 

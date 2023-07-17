@@ -9,7 +9,7 @@ export const InputContainer = styled.div<InputContainerProps>`
   position: relative;
   display: flex;
   align-items: center;
-  padding: 0.8rem 1.5rem;
+  padding: 0.8rem 1rem;
   border: 2px solid transparent;
   border-radius: 0.25rem;
   background: ${props => props.theme.colors.containerBg};

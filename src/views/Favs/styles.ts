@@ -5,8 +5,8 @@ export const StyledFavs = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 6rem;
   margin-bottom: 2rem;
+  padding-top: 10rem;
 
   .title-content {
     width: 100%;
@@ -49,7 +49,7 @@ export const StyledFavs = styled.main`
   }
   /* For medium devices */
   @media screen and (max-width: 768px) {
-    padding-top: 1rem;
+    padding-top: 2rem;
 
     .title-content {
       flex-direction: column;

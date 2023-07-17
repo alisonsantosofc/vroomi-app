@@ -2,20 +2,20 @@ import styled from 'styled-components';
 
 export const StyledRent = styled.main`
   min-height: 100vh;
-  padding-top: 4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 2rem;
+  padding-top: 10rem;
 
   .rent-find {
-    margin-top: 1rem;
     width: 100%;
     display: flex;
     flex-direction: column;
 
     h2 {
       font-size: 2rem;
+      font-weight: 600;
     }
 
     .form-content {
@@ -44,7 +44,6 @@ export const StyledRent = styled.main`
     svg {
       padding: 0.5rem;
       font-size: 2rem;
-      margin-top: 1.5rem;
       border-radius: 100%;
       cursor: pointer;
       transition: all ease-in 0.2s;
@@ -104,12 +103,17 @@ export const StyledRent = styled.main`
   }
   /* For medium devices */
   @media screen and (max-width: 768px) {
-    padding-top: 1rem;
+    padding-top: 2rem;
 
     .rent-find {
+      h2 {
+        color: ${({theme}) => theme.colors.white};
+      }
+
       .form-content {
         flex-direction: column;
         gap: 1rem;
+        margin-top: 1.5rem;
 
         button {
           width: 100%;
