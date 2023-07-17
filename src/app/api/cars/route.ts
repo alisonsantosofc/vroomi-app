@@ -3,12 +3,13 @@ import { NextResponse } from 'next/server';
 import importedCars from "./cars.json";
 import { Car } from '@/@types/Car';
 
-function addId(cars: Omit<Car, "id" | "available">[]) {
+function addId(cars: Omit<Car, "id" | "available" | "like">[]) {
   return cars.map((car, i) => {
     return { 
       ...car, 
       id: i + 1,
       available: true,
+      like: false,
     };
   });
 }

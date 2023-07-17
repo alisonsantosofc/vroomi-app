@@ -20,11 +20,12 @@ export const StyledCarCard = styled.li<{disabled: boolean}>`
   }
 
   .brand-container {
+    position: relative;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 5rem;
+    margin: 4.5rem 0 1rem;
     color: ${({theme}) => theme.colors.title};
 
     p {
@@ -34,7 +35,28 @@ export const StyledCarCard = styled.li<{disabled: boolean}>`
       strong {
         font-size: 1.8rem;
       }
-    }    
+    }  
+
+    > i {
+      position: absolute;
+      right: 0;
+      top: 0.5rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: ${({theme}) => theme.colors.text};
+    }
+    
+    > span {
+      position: absolute;
+      display: inline-flex;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+      font-size: 0.9rem;
+      background: ${({theme}) => theme.colors.text};
+      right: 0;
+      bottom: -1rem;
+      color: ${({theme}) => theme.colors.titleContrast};
+    }
   }
 
   .info-container {
@@ -42,6 +64,7 @@ export const StyledCarCard = styled.li<{disabled: boolean}>`
     width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 0.25rem;
 
     p {

@@ -13,7 +13,7 @@ export function Fleet() {
       <h2 className="section-title">Frota de veículos</h2>
       <span className="section-subtitle">Trabalhamos com as melhores marcas</span>
 
-      <div className="fleet-container grid">
+      <div className="fleet-container container grid">
         <div className="brand-card">
           <CarBrandSVG.Chevrolet color={!darkMode ? colors.title : colors.title} />
         </div>

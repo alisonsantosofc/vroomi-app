@@ -2,6 +2,7 @@
 
 import { Car } from "@/@types/Car";
 import { createContext, ReactNode, useContext, useEffect, useState } from "react";
+import { useCars } from "./useCars";
 
 interface RentalsProviderProps {
   children: ReactNode;
@@ -25,8 +26,16 @@ const RentalsContext = createContext<RentalsContextData>(
 export function RentalsProvider({ children }: RentalsProviderProps) {
   const [rentals, setRentals] = useState([] as Rental[]);
 
+  const { cars, likedCars, setLikedCars, setCars } = useCars();
+
   function createRental(car: Car, expectedReturnDate: Date) {
-    // Saving data to local stoge
+    const carsUpdated = [...cars];
+    const findIndex = carsUpdated.findIndex(findCar => findCar.id === car.id);
+
+    carsUpdated[findIndex].available = false;
+    setCars(carsUpdated);
+
+    // Saving data to local storage
     localStorage.setItem(
       'rentals',
       JSON.stringify([...rentals, {
@@ -43,6 +52,12 @@ export function RentalsProvider({ children }: RentalsProviderProps) {
 
   function finishRental(carId: number, expectedReturnDate: Date) {
     const rentalsUpdated = rentals.filter(rental => rental.car.id !== carId) 
+
+    const carsUpdated = [...cars];
+    const findIndex = carsUpdated.findIndex(findCar => findCar.id === carId);
+
+    carsUpdated[findIndex].available = true;
+    setCars(carsUpdated);
 
     // Saving data to local stoge
     localStorage.setItem(
@@ -61,7 +76,30 @@ export function RentalsProvider({ children }: RentalsProviderProps) {
     if (rentals) {
       setRentals(rentals);
     }
+
+    const likedCars = JSON.parse(
+      localStorage.getItem('likedCars') as string
+    );
+
+    if (likedCars) {
+      setLikedCars(likedCars);
+    }
   }, []);
+
+  useEffect(() => {
+    if (rentals.length > 0) {
+      const rentalsUpdated = [...rentals];
+      rentalsUpdated.forEach((rental, i) => {
+        const findIndex = likedCars.findIndex(findCar => findCar.id === rental.car.id);
+
+        if (findIndex >= 0) {
+          rentalsUpdated[i].car = likedCars[findIndex];
+        }
+      });
+
+      setRentals(rentalsUpdated);
+    }
+  }, [likedCars]);
 
   return (
     <RentalsContext.Provider value={{ rentals, createRental, finishRental }}>

@@ -5,6 +5,7 @@ import { DarkModeProvider } from '@/hooks/useDarkMode';
 import { MyApp } from './app';
 import { AppProps } from 'next/app';
 import { RentalsProvider } from '@/hooks/useRentals';
+import { CarsProvider } from '@/hooks/useCars';
 
 const montserrat = Montserrat({ subsets: ['latin'] });
 
@@ -25,11 +26,13 @@ export default function RootLayout({
     <html lang="en">
       <body className={montserrat.className}>
         <DarkModeProvider>
-          <RentalsProvider>
-            <MyApp {...pageProps}>
-              {children}
-            </MyApp>
-          </RentalsProvider>
+          <CarsProvider>
+            <RentalsProvider>
+              <MyApp {...pageProps}>
+                {children}
+              </MyApp>
+            </RentalsProvider>
+          </CarsProvider>
         </DarkModeProvider>
       </body>
     </html>

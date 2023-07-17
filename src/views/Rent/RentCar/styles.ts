@@ -20,7 +20,9 @@ export const StyledRentCar = styled.div`
   .brand-container {
     position: relative;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     margin-top: 1rem;
 
     h2 {
@@ -30,6 +32,10 @@ export const StyledRentCar = styled.div`
 
     span {
       font-size: 1.5rem;
+    }
+
+    svg {
+      width: 5rem;
     }
   }
 
@@ -97,6 +103,10 @@ export const StyledRentCar = styled.div`
 
       span {
         font-size: 1.2rem;
+      }
+
+      svg {
+        width: 3.2rem;
       }
     }
   }

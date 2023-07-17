@@ -10,6 +10,9 @@ import { StyledRentCar } from './styles';
 import { useRentals } from '@/hooks/useRentals';
 import dayjs from 'dayjs';
 import { useRouter } from 'next/navigation';
+import { getCarBrandSVG } from '@/components/CustomSVG';
+import { useDarkMode } from '@/hooks/useDarkMode';
+import { useTheme } from 'styled-components';
 
 
 interface RentCarProps {
@@ -19,6 +22,8 @@ interface RentCarProps {
 
 export function RentCar({ car, onRequestClose }: RentCarProps) {
   const { createRental } = useRentals();
+  const { darkMode } = useDarkMode();
+  const { colors } = useTheme();
   const router = useRouter();
 
   async function handleCreateRental() {
@@ -42,14 +47,18 @@ export function RentCar({ car, onRequestClose }: RentCarProps) {
       )}
 
       <div className="brand-container">
-        <h2>{car.model}</h2>
-        <span>{car.brand}</span>
+        <div>
+          <h2>{car.model}</h2>
+          <span>{car.brand}</span>
+        </div>
+
+        {getCarBrandSVG(car.brand, colors, darkMode)}
       </div>
 
       <div className="info-container">
         <div className="price-content">
           <p>
-            Preço por dia:{' '}
+            {'Preço por dia: '}
             <span>
               {formatAmount({
                 amount: car.pricePerDay,
@@ -60,7 +69,7 @@ export function RentCar({ car, onRequestClose }: RentCarProps) {
           </p>
 
           <p>
-            {'Preço por km: '}
+            {'Preço por km adicional: '}
             <span>
               {formatAmount({
                 amount: car.pricePerKm,
@@ -80,9 +89,9 @@ export function RentCar({ car, onRequestClose }: RentCarProps) {
           </p>
 
           <p>
-            {'Limite de km rodados: '}
+            {'Franquia de Kms: '}
             <span>
-              {`${car?.availability?.maxDistance} Km`}
+              {`${car?.availability?.maxDistance} Kms`}
             </span>
           </p>
         </div>

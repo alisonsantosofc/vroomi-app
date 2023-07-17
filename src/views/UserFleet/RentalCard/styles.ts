@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledRentalCard = styled.li<{disabled: boolean}>`
+export const StyledRentalCard = styled.li`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -11,7 +11,6 @@ export const StyledRentalCard = styled.li<{disabled: boolean}>`
   background: ${({theme}) => theme.colors.containerBg};
   box-shadow: ${({theme}) => theme.effects.shadowAround};
   transition: .3s;
-  opacity: ${({disabled}) => disabled && '0.5'};
 
   img {
     position: absolute;
@@ -19,12 +18,16 @@ export const StyledRentalCard = styled.li<{disabled: boolean}>`
     left: -8rem;
   }
 
-  .brand-container {
+  .rent-data-container {
     width: 100%;
+  }
+
+  .brand-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: ${({theme}) => theme.colors.title};
+    padding-right: 4rem;
 
     p {
       display: flex;
@@ -36,7 +39,17 @@ export const StyledRentalCard = styled.li<{disabled: boolean}>`
     }   
     
     svg {
-      width: 5rem;
+      width: 4rem;
+    }
+
+
+    i {
+      position: absolute;
+      font-size: 2rem;
+      color: ${({theme}) => theme.colors.text};
+      right: 1rem;
+      top: 2rem;
+      cursor: pointer;
     }
   }
 
@@ -63,30 +76,34 @@ export const StyledRentalCard = styled.li<{disabled: boolean}>`
   // Breakpoints
   /* For large devices */
   @media screen and (max-width: 998px) {
-    padding: 1rem 2rem 2rem 2rem;
-    margin-top: 4rem;
+    padding: 3rem 2rem 2rem 2rem;
+    margin-top: 8rem;
 
     .rent-data-container {
       width: 100%;
     }
 
     img {
-      top: -25%;
-      left: 30%;
+      width: 380px;
+      top: -7rem;
+      left: inherit;
     }
   }
   /* For medium devices */
   @media screen and (max-width: 768px) {
     padding: 4rem 2rem 2rem 2rem;
-
-    img {
-      left: 20%;
-    }
   }
   @media screen and (max-width: 576px) {
+    .brand-container {
+      p {
+        strong {
+          font-size: 2rem;
+        }
+      }
 
-    img {
-      left: 10%;
+      svg {
+        width: 3rem;
+      }
     }
   }
   /* For small devices */

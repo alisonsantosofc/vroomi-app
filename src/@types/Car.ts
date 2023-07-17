@@ -9,4 +9,5 @@ export interface Car {
     maxDistance: number;
   }
   available: boolean;
+  like: boolean;
 }

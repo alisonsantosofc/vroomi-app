@@ -1,9 +1,11 @@
 import Image from 'next/image';
 
 import { Button } from '@/components/Button';
+import LikeButton from '@/components/LikeButton';
 
 import { Car } from '@/@types/Car';
 import { formatAmount } from '@/utils/format';
+import { useCars } from '@/hooks/useCars';
 
 import { StyledCarCard } from './styles';
 
@@ -13,6 +15,8 @@ interface CarCardProps {
 }
 
 export function CarCard({car, handleRentCar}: CarCardProps) {
+  const { handleLikedCar } = useCars();
+
   return (
     <StyledCarCard disabled={car.available ? false : true}>
       <Image
@@ -27,6 +31,9 @@ export function CarCard({car, handleRentCar}: CarCardProps) {
           <strong>{car.model}</strong>
           <span>{car.brand}</span>
         </p>
+
+        <LikeButton liked={car.like} handleLiked={() => handleLikedCar(car)}  />
+        <span>{`até ${car.availability.maxDistance} km`}</span>
       </div>
 
       <div className="info-container">

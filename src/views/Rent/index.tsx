@@ -10,30 +10,27 @@ import { RentCar } from './RentCar';
 import { CarCard } from './CarCard';
 
 import { Car } from '@/@types/Car';
-
-import { StyledRent } from './styles';
 import { useRentals } from '@/hooks/useRentals';
 import { useModal } from '@/hooks/useModal';
+import { useCars } from '@/hooks/useCars';
 
+import { StyledRent } from './styles';
 interface RequestState {
   request: 'pending' | 'success' | 'failed';
 }
 
 export function Rent() {
+  const { cars, handleSetCars } = useCars();
   const { rentals } = useRentals();
   const { setModalContent } = useModal();
 
-  const [cars, setCars] = useState<Car[]>([]);
   const [maxDuration, setMaxDuration] = useState(0);
   const [maxDistance, setMaxDistance] = useState(0);
-
-  const [carSeletedToRent, setCarSeletedToRent] = useState<Car>({} as Car);
-  const [isOpenModal, setIsOpenModal] = useState(false);
 
   const [monitoringRequest, setMonitoringRequest] = useState<RequestState>({} as RequestState);
 
   async function handleFindAvailableCars() {
-    setCars([]);
+    handleSetCars([]);
 
     try {
       const apiUrl = process.env.NEXT_PUBLIC_API_URL;
@@ -57,7 +54,7 @@ export function Rent() {
         }
       });
       
-      setCars(cars);
+      handleSetCars(cars);
 
       setMonitoringRequest({ request: 'success' });
     } catch (err) {

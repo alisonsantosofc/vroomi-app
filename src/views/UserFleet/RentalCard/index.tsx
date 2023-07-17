@@ -1,14 +1,16 @@
 import Image from 'next/image';
+import { useTheme } from 'styled-components';
 
 import { Button } from '@/components/Button';
+import LikeButton from '@/components/LikeButton';
 import { getCarBrandSVG } from "@/components/CustomSVG";
 
 import { Car } from '@/@types/Car';
 
-import { StyledRentalCard } from './styles';
 import { useDarkMode } from '@/hooks/useDarkMode';
-import { useTheme } from 'styled-components';
-import { formatAmount } from '@/utils/format';
+import { useCars } from '@/hooks/useCars';
+
+import { StyledRentalCard } from './styles';
 
 interface CarCardProps {
   car: Car;
@@ -19,11 +21,10 @@ interface CarCardProps {
 export function RentalCard({car, expectedReturnDate, handleFinishRental}: CarCardProps) {
   const { darkMode } = useDarkMode();
   const { colors } = useTheme();
-
-  const elementColor = !darkMode ? colors.title : colors.title;
+  const { handleLikedCar } = useCars();
 
   return (
-    <StyledRentalCard disabled={car.available ? false : true}>
+    <StyledRentalCard>
       <Image
         src={require(`../../../../public/cars/${car.id}.png`)}
         alt={car.model}
@@ -37,6 +38,8 @@ export function RentalCard({car, expectedReturnDate, handleFinishRental}: CarCar
             <strong>{car.model}</strong>
             <span>{car.brand}</span>
           </p>
+          
+          <LikeButton liked={car.like} handleLiked={() => handleLikedCar(car)}  />
 
           {getCarBrandSVG(car.brand, colors, darkMode)}
         </div>
