@@ -225,6 +225,8 @@ export const StyledAppContainer = styled.div`
     position: absolute;
     top: 0;
     left: 0;
+    overflow: hidden;
+    max-width: 100%;
   }
 
   // Breakpoints
