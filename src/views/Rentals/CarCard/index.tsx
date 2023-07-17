@@ -8,7 +8,6 @@ import { getCarBrandSVG } from "@/components/CustomSVG";
 import { Car } from '@/@types/Car';
 
 import { useDarkMode } from '@/hooks/useDarkMode';
-import { useCars } from '@/hooks/useCars';
 
 import { StyledRentalCard } from './styles';
 
@@ -21,7 +20,6 @@ interface CarCardProps {
 export function CarCard({car, expectedReturnDate, handleFinishRental}: CarCardProps) {
   const { darkMode } = useDarkMode();
   const { colors } = useTheme();
-  const { handleLikedCar } = useCars();
 
   return (
     <StyledRentalCard>
@@ -38,8 +36,6 @@ export function CarCard({car, expectedReturnDate, handleFinishRental}: CarCardPr
             <strong>{car.model}</strong>
             <span>{car.brand}</span>
           </p>
-          
-          <LikeButton liked={car.like} handleLiked={() => handleLikedCar(car)}  />
 
           {getCarBrandSVG(car.brand, colors, darkMode)}
         </div>
